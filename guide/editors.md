@@ -1,18 +1,18 @@
-# Editor Support
+# 에디터 통합
 
-Since Slidev is using Markdown as the source entry, you can use ANY editors you love to write it.
+Slidev는 Markdown을 소스로 사용하기 때문에 원하는 에디터를 사용하여 작성할 수 있습니다.
 
-If you want some high-level management to your slides, we have provided the following editor integrations for you!
+슬라이드를 높은 수준으로 관리할 수 있도록, 다음과 같은 에디터 통합을 제공합니다!
 
-## Integrated Editor
+## 에디터 통합
 
-Slidev comes with an integrated [CodeMirror](https://codemirror.net/) editor that will instantly reload and save the changes to your file. 
+Slidev는 [CodeMirror](https://codemirror.net/) 에디터를 통합하여 파일을 실시간으로 다시 로드하고 저장할 수 있습니다.
 
-Click the <carbon-edit class="inline-icon-btn"/> button to open it.
+<carbon-edit class="inline-icon-btn"/> 버튼을 클릭하여 열어보세요.
 
 ![](/screenshots/integrated-editor.png)
 
-## VS Code Extension
+## VS Code 확장
 
 <p align="center">
     <a href="https://github.com/slidevjs/slidev" target="_blank">
@@ -28,15 +28,15 @@ Click the <carbon-edit class="inline-icon-btn"/> button to open it.
     </a>
 </p>
 
-The VS Code extension provides some features to help you better organize your slides and have a quick overview of them.
+VS Code 확장 프로그램을 설치해서 슬라이드를 더 쉽게 관리할 수 있습니다.
 
-### Features
+### 기능
 
-- View slides in the side panel
-- Go to next / prev buttons
-- Re-ordering slides
-- Folding for slide blocks
-- Convert Markdown to HTML
+- 슬라이드를 사이드 패널에서 볼 수 있습니다.
+- 다음 / 이전 버튼으로 이동합니다.
+- 슬라이드 재정렬
+- 슬라이드 블록을 접기
+- Markdown을 HTML로 변환
 
 ![](https://user-images.githubusercontent.com/11247099/116809994-cc2caa00-ab73-11eb-879f-60585747c3c9.png)
 

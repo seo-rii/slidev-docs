@@ -1,19 +1,19 @@
-# Use Addon
+# 애드온 사용하기
 
-Addons are sets of additional components, layouts, styles, configuration...etc. that you can use in your presentation.
+애드온은 프레젠테이션에서 사용할 수 있는 추가 컴포넌트, 레이아웃, 스타일, 설정 등의 세트입니다.
 
-They are quite similar to [themes](/themes/use), but in general:
+[테마](/themes/use)와 매우 유사하지만, 일반적으로:
 
-* they don't affect the global styles of your slides
-* you can use multiple addons in one presentation
+* 슬라이드의 전역 스타일에 영향을 주지 않습니다.
+* 하나의 프레젠테이션에서 여러 애드온을 사용할 수 있습니다.
 
-To use addons, you have to install them manually via:
+애드온을 사용하려면, 다음과 같이 수동으로 설치해야 합니다:
 
 ```bash
 $ npm install [slidev-addon-package1] [slidev-addon-package2]
 ```
 
-And then declare the addons either in your frontmatter:
+그 다음, 프론트매터에서 애드온을 선언합니다:
 
 ```yaml
 ---
@@ -23,7 +23,7 @@ addons:
 ---
 ```
 
-Or in your `package.json` file:
+또는 `package.json` 파일에서:
 
 ```json
 // package.json

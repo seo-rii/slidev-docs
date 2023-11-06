@@ -1,8 +1,8 @@
-# Markdown Syntax
+# 마크다운 문법
 
-Slides are written within **a single markdown file** (by default `./slides.md`). 
+슬라이드는 **하나의 마크다운 파일** (기본값 `./slides.md`) 안에 작성됩니다.
 
-You can use [the Markdown features](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) as you normally would, with the additional support of inlined HTML and Vue Components. Styling using [UnoCSS](/custom/config-unocss) is also supported. Use `---` padded with a new line to separate your slides. 
+일반적인 [마크다운 기능](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)을 그대로 사용할 수 있으며, 심지어 HTML과 Vue 컴포넌트를 인라인으로 사용할 수 있습니다! [UnoCSS](/custom/config-unocss)를 사용하여 스타일을 지정할 수도 있습니다. 새 줄로 구분된 `---`을 사용하여 슬라이드를 구분합니다.
 
 ~~~md
 # Slidev
@@ -30,9 +30,9 @@ You can directly use Windi CSS and Vue components to style and enrich your slide
 </div>
 ~~~
 
-## Front Matter & Layouts
+## Front Matter 및 레이아웃
 
-Specify layouts and other metadata for each slide by converting the separators into [front matter blocks](https://jekyllrb.com/docs/front-matter/). Each frontmatter starts with a triple-dash and ends with another. Texts between them are data objects in [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) format. For example:
+레이아웃과 슬라이드의 다른 메타데이터를 지정하려면 구분자를 [front matter 블록](https://jekyllrb.com/docs/front-matter/)으로 변환하여 각 슬라이드에 대한 레이아웃 및 기타 메타데이터를 지정하십시오. 각 frontmatter는 세 개의 대시로 시작하고 또 다른 대시로 끝납니다. 그 사이의 텍스트는 [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) 형식의 데이터 객체입니다. 예를 들면:
 
 ~~~md
 ---
@@ -60,11 +60,11 @@ This is a page with the layout `center` and a background image.
 This is a default page without any additional metadata.
 ~~~
 
-Refer to [customization](/custom/) for more details.
+[커스터마이징](/custom/)에 대한 자세한 내용은 커스터마이징을 참조하십시오.
 
-## Code Blocks
+## 코드 블록
 
-One big reason I am building Slidev is needing to make my code look just right in the slides. So just as you expected, you can use Markdown flavored code block to highlight your code.
+슬라이드를 만들 때 코드를 깔끔하게 보여주는 것이 중요합니다. Slidev에서는 당연히 코드 블록을 사용할 수 있습니다.
 
 ~~~ts
 //```ts
@@ -72,11 +72,11 @@ console.log('Hello, World!')
 //```
 ~~~
 
-We support [Prism](https://prismjs.com) and [Shiki](https://github.com/shikijs/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+[Prism](https://prismjs.com)과 [Shiki](https://github.com/shikijs/shiki)를 문법 강조기로 지원합니다. 자세한 내용은 [문법 강조기](/custom/highlighters) 섹션을 참조하십시오.
 
-### Line Highlighting
+### 특정 줄 강조
 
-To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1 by default.
+특정한 줄을 강조하고 싶다면, 중괄호 `{}` 안에 줄 번호를 추가하십시오. 줄 번호는 1부터 시작합니다.
 
 ~~~ts
 //```ts {2,3}
@@ -89,7 +89,7 @@ function add(
 //```
 ~~~
 
-You can enable line number to all slides by setting `lineNumbers: true` on the config or enable each code block individually by setting `lines:true`. In case you want to disable the numbering for an specific block when `lineNumbers: true` you can set `lines:false` for that block:
+`lineNumbers: true`를 설정하면 모든 슬라이드에 줄 번호를 활성화할 수 있습니다. 또는 각 코드 블록에 `{lines:true}`를 설정하여 개별적으로 활성화할 수도 있습니다. `lineNumbers: true`일 때 특정 블록에 대해 번호를 비활성화하려면 해당 블록에 `lines:false`를 설정하십시오.
 
 ~~~ts
 //```ts {2,3} {lines:true}
@@ -102,7 +102,7 @@ function add(
 //```
 ~~~
 
-You can also set the starting line for each code block and highlight the lines accordingly, defaults to 1:
+또한, 각 코드 블록에 시작 줄을 설정하고 해당 줄을 강조할 수도 있습니다. 기본값은 1입니다.
 
 ~~~ts
 //```ts {6,7} {lines:true, startLine:5}
@@ -115,7 +115,7 @@ function add(
 //```
 ~~~
 
-To change the highlight in multiple steps, you can use `|` to separate them. For example
+하이라이트를 여러 단계로 변경하려면 `|`를 사용하여 단계를 구분하십시오. 예를 들어:
 
 ~~~ts
 //```ts {2-3|5|all}
@@ -128,9 +128,9 @@ function add(
 //```
 ~~~
 
-This will first highlight `a: Ref<number> | number` and `b: Ref<number> | number`, and then `return computed(() => unref(a) + unref(b))` after one click, and lastly, the whole block. Learn more in the [clicks animations guide](/guide/animations).
+이 예제는 먼저 `a: Ref<number> | number`와 `b: Ref<number> | number`를 강조하고, 그 다음 `return computed(() => unref(a) + unref(b))`를 강조하고, 마지막으로 전체 블록을 강조합니다. [클릭 애니메이션 가이드](/guide/animations)에서 자세히 알아보십시오.
 
-To skip highlighting any lines, you can set the line number to `0`. For example
+어떤 줄도 강조하지 않으려면 줄 번호를 `0`으로 설정하십시오. 예를 들어:
 
 ~~~ts {0}
 //```ts {0}
@@ -143,8 +143,7 @@ function add(
 //```
 ~~~
 
-If the code doesn't fit into one slide, you can pass an extra maxHeight option which will set fixed height
-and enable scrolling
+만일 코드가 한 슬라이드에 맞지 않는다면, `maxHeight` 옵션을 추가하여 고정 높이를 설정하고 스크롤을 활성화할 수 있습니다.
 
 ~~~ts {2|3|7|12}
 //```ts {2|3|7|12} {maxHeight:'100px'}
@@ -161,7 +160,7 @@ const c = add(1, 2)
 
 ### Monaco Editor
 
-Whenever you want to do some modification in the presentation, simply add `{monaco}` after the language id — it turns the block into a fully-featured Monaco editor!
+만일 코드를 편집하고 싶다면, 언제든지 언어 ID 뒤에 `{monaco}`를 추가하십시오. 이렇게 하면 블록이 완전한 기능을 갖춘 Monaco 편집기로 변환됩니다!
 
 ~~~ts
 //```ts {monaco}
@@ -169,11 +168,11 @@ console.log('HelloWorld')
 //```
 ~~~
 
-Learn more about [configuring Monaco](/custom/config-monaco).
+[Monaco 에디터 설정](/custom/config-monaco)에 대해 더 자세히 알아보세요.
 
 ### Monaco diff
 
-Monaco can also generate a diff between two code blocks. Use `{monaco-diff}` to turn the block into a [diff Monaco editor](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) and use `~~~` to separate both original and modified version of the code!
+Monaco는 두 코드 블록 간의 차이점을 생성할 수도 있습니다. 블록을 [diff Monaco 에디터](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example)로 변환하려면 `{monaco-diff}`를 사용하고 `~~~`로 원본과 수정된 코드를 구분하십시오!
 
 ```md
 //```ts {monaco-diff}
@@ -191,9 +190,9 @@ This line is removed on the left.
 //```
 ```
 
-## Embedded Styles
+## 스타일 임베딩
 
-You can use `<style>` tag in your Markdown directly to override styles for the **current slide**.
+**현재 슬라이드에** 대한 스타일을 임베딩하려면 Markdown에서 `<style>` 태그를 직접 사용하십시오.
 
 ```md
 # This is Red
@@ -209,9 +208,9 @@ h1 {
 # Next slide is not affected
 ```
 
-`<style>` tag in Markdown is always [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css). As an outstanding result, a selector with the child combinator (`.a > .b`) is unusable as such; see the previous link. To have global style overrides, check out the [customization section](/custom/directory-structure#style).
+> **참고:** Markdown의 `<style>` 태그는 항상 [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css)입니다. 이로 인해 자식 선택자 (`.a > .b`)를 사용할 수 없습니다. 이전 링크를 참조하십시오. 전역 스타일을 재정의하려면 [커스터마이징 섹션](/custom/directory-structure#style)을 확인하십시오.
 
-Powered by [UnoCSS](/custom/config-unocss), you can directly use nested css and [directives](https://windicss.org/features/directives.html) (e.g. `@apply`)
+[UnoCSS](/custom/config-unocss)를 통해 제공되는 기능을 사용하여 중첩된 css와 [directives](https://windicss.org/features/directives.html) (예: `@apply`)를 직접 사용할 수 있습니다.
 
 ```md
 # Slidev
@@ -227,33 +226,33 @@ blockquote {
 </style>
 ```
 
-## Static Assets
+## 정적 파일
 
-Just like you would do in markdown, you can use images pointing to a remote or local url.
+슬라이드에 정적 파일을 포함하려면 마크다운과 마찬가지로 원하는 위치에 이미지를 추가하십시오.
 
-For remote assets, the built-in [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) will cache them into the disk at the first run so you can have instant loading even for large images later on.
+인터넷의 리소스를 사용하면, 내장된 [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets)가 첫 번째 실행에서 디스크에 캐시하므로 나중에도 큰 이미지에 대해 즉시 로드할 수 있습니다.
 
 ```md
-![Remote Image](https://sli.dev/favicon.png)
+![Remote Image](https://ko.sli.dev/favicon.png)
 ```
 
-For local assets, put them into the [`public` folder](/custom/directory-structure.html#public) and reference them with **leading slash**.
+로컬 리소스를 사용하려면 [`public` 폴더](/custom/directory-structure#public)에 넣고 **leading slash**로 참조하십시오.
 
 ```md
 ![Local Image](/pic.png)
 ```
 
-For you want to apply custom sizes or styles, you can convert them to the `<img>` tag 
+이미지 크기 혹은 스타일을 변경하려면, `<img>` 태그로 변환할 수 있습니다.
 
 ```html
 <img src="/pic.png" class="m-40 h-40 rounded shadow" />
 ```
 
-## Notes
+## 노트
 
-You can also take notes for each slide. They will show up in [Presenter Mode](/guide/presenter-mode) for you to reference during presentations.
+슬라이드에 노트를 추가하려면, 각 슬라이드에 대한 마지막 주석 블록을 사용하십시오. 노트는 [발표 모드](/guide/presenter-mode)에서 참조할 수 있습니다.
 
-In Markdown, the last comment block in each slide will be treated as a note.
+마크다운에서 각 슬라이드의 마지막 주석 블록은 노트로 처리됩니다.
 
 ~~~md
 ---
@@ -279,24 +278,24 @@ This is another note
 -->
 ~~~
 
-## Icons
+## 아이콘
 
-Slidev allows you to have the accessing to almost all the popular open-source iconsets **directly** in your markdown. Powered by [`unplugin-icons`](https://github.com/antfu/unplugin-icons) and [Iconify](https://iconify.design/).
+Slidev는 마크다운에서 아이콘을 사용할 수 있습니다. [`unplugin-icons`](https://github.com/antfu/unplugin-icons) 및 [Iconify](https://iconify.design/)를 기반으로 합니다.
 
-The naming follows [Iconify](https://iconify.design/)'s conversion `{collection-name}-{icon-name}`. For example:
+아이콘 이름은 [Iconify](https://iconify.design/)의 변환 `{collection-name}-{icon-name}`을 따릅니다. 예를 들어:
 
 - `<mdi-account-circle />` - <mdi-account-circle /> from [Material Design Icons](https://github.com/Templarian/MaterialDesign)
 - `<carbon-badge />` - <carbon-badge /> from [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons)
 - `<uim-rocket />` - <uim-rocket /> from [Unicons Monochrome](https://github.com/Iconscout/unicons)
 - `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> from [Twemoji](https://github.com/twitter/twemoji)
 - `<logos-vue />` - <logos-vue /> from [SVG Logos](https://github.com/gilbarbara/logos)
-- And much more...
+- 및 기타 등등...
 
-Browse and search for all the icons available with [Icônes](https://icones.js.org/).
+[Icônes](https://icones.js.org/)에서 사용 가능한 아이콘을 찾아보세요.
 
-### Styling Icons
+### 아이콘 스타일링
 
-You can style the icons just like other HTML elements. For example:
+아이콘은 다른 HTML 요소와 마찬가지로 스타일을 지정할 수 있습니다. 예를 들어:
 
 ```html
 <uim-rocket />
@@ -308,13 +307,13 @@ You can style the icons just like other HTML elements. For example:
 <uim-rocket class="text-3xl text-red-400 mx-2" />
 <uim-rocket class="text-3xl text-orange-400 animate-ping ml-2" />
 
-## Slots
+## 슬롯
 
-> Available since v0.18
+> v0.18부터 사용 가능
 
-Some layouts can provide multiple contributing points using [Vue's named slots](https://v3.vuejs.org/guide/component-slots.html).
+슬롯을 사용하여 슬라이드의 특정 부분을 레이아웃에 제공할 수 있습니다. [Vue의 네임드 슬롯](https://v3.vuejs.org/guide/component-slots.html)을 사용하여 여러 기여 지점을 제공할 수도 있습니다.
 
-For example, in [`two-cols` layout](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue), you can have two columns left (`default` slot) and right (`right` slot) side by side.
+예를 들어, [`two-cols` 레이아웃](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue)에서는 왼쪽 (`default` 슬롯)과 오른쪽 (`right` 슬롯)에 두 개의 열을 나란히 표시할 수 있습니다.
 
 ```md
 ---
@@ -348,7 +347,7 @@ This shows on the right
 </div>
 </div>
 
-We also provide a shorthand syntax sugar `::name::` for slot name. The following example works exactly the same as the previous one.
+또한, `::name::`을 사용하여 슬롯 이름을 축약할 수도 있습니다. 다음 예제는 이전 예제와 정확히 동일하게 작동합니다.
 
 ```md
 ---
@@ -366,7 +365,7 @@ This shows on the left
 This shows on the right
 ```
 
-You can also explicitly specify the default slot and provide in the custom order
+기본 슬롯을 명시적으로 지정하고 사용자 정의 순서를 제공할 수도 있습니다.
 
 ```md
 ---
@@ -386,9 +385,9 @@ This shows on the right
 This shows on the left
 ```
 
-## Configurations
+## 설정
 
-All configurations needed can be defined in the Markdown file. For example:
+모든 설정은 마크다운 파일의 frontmatter에 정의할 수 있습니다. 예를 들어:
 
 ```md
 ---
@@ -402,26 +401,25 @@ background: 'https://source.unsplash.com/1600x900/?nature,water'
 This is the cover page.
 ```
 
-Learn more about [frontmatter configurations](/custom/#frontmatter-configures).
+[frontmatter 설정](/custom/#frontmatter-configures)에 대해 더 자세히 알아보세요.
 
 ## LaTeX
 
-Slidev comes with LaTeX support out-of-box, powered by [KaTeX](https://katex.org/).
+Slidev는 [KaTeX](https://katex.org/)를 사용하여 LaTeX를 지원합니다.
 
 <Tweet id="1392246507793915904" />
 
-### Inline
+### 인라인
 
-Surround your LaTeX with a single `$` on each side for inline rendering.
+인라인 렌더링을 위해 LaTeX를 하나의 `$` 문자로 둘러싸십시오.
 
 ```md
 $\sqrt{3x-1}+(1+x)^2$
 ```
 
-### Block
+### 블록
 
-Use two (`$$`) for block rendering. This mode uses bigger symbols and centers
-the result.
+블록 렌더링을 위해 LaTeX를 두 개의 `$` 문자로 둘러싸십시오. 이 모드는 더 큰 기호를 사용하고 결과를 중앙에 배치합니다.
 
 ```md
 $$
@@ -438,13 +436,13 @@ $$
 $$
 ```
 
-Learn more: [Demo](https://sli.dev/demo/starter/8) | [KaTeX](https://katex.org/) | [`markdown-it-katex`](https://github.com/waylonflinn/markdown-it-katex)
+[Demo](https://ko.sli.dev/demo/starter/8), [KaTeX](https://katex.org/), [`markdown-it-katex`](https://github.com/waylonflinn/markdown-it-katex)에서 다 자세한 내용을 알아보세요.
 
-### LaTex line highlighting
+### LaTex 라인 하이라이팅
 
-> Available since v0.43.1
+> v0.43.1부터 사용 가능
 
-To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1 by default.
+LaTex 블록에 특정 줄을 강조하려면, 중괄호 `{}` 안에 줄 번호를 추가하십시오. 줄 번호는 1부터 시작합니다.
 
 ```md
 $$ {1|3|all}
@@ -457,11 +455,11 @@ $$ {1|3|all}
 $$
 ```
 
-## Diagrams
+## 다이어그램
 
-You can also create diagrams / graphs from textual descriptions in your Markdown, powered by [Mermaid](https://mermaid-js.github.io/mermaid).
+[Mermaid](https://mermaid-js.github.io/mermaid) 기반의 다이어그램을 마크다운에서 사용할 수 있습니다.
 
-Code blocks marked as `mermaid` will be converted to diagrams, for example:
+언어가 `mermaid`로 설정된 코드 블록은 다이어그램으로 변환됩니다. 예를 들어:
 
 ~~~md
 //```mermaid
@@ -471,7 +469,7 @@ sequenceDiagram
 //```
 ~~~
 
-You can further pass an options object to it to specify the scaling and theming. The syntax of the object is a JavaScript object literal, you will need to add quotes (`'`) for strings and use comma (`,`) between keys.
+옵션을 전달함으로써 다이어그램의 스케일링과 테마를 지정할 수도 있습니다. 객체의 구문은 JavaScript 객체 리터럴의 구문입니다. 문자열에는 따옴표 (`'`)를 추가하고 키 사이에 쉼표 (`,`)를 사용해야 합니다.
 
 ~~~md
 //```mermaid {theme: 'neutral', scale: 0.8}
@@ -482,13 +480,13 @@ C -->|Two| E[Result 2]
 //```
 ~~~
 
-Learn more: [Demo](https://sli.dev/demo/starter/9) | [Mermaid](https://mermaid-js.github.io/mermaid)
+[Demo](https://ko.sli.dev/demo/starter/9), [Mermaid](https://mermaid-js.github.io/mermaid)에서 더 자세한 내용을 알아보세요.
 
-## Multiple Entries
+## 다중 진입점
 
-> Available since v0.15
+> v0.15부터 사용 가능
 
-You can split your `slides.md` into multiple files and organize them as you want.
+Slidev는 여러 개의 마크다운 파일을 지원합니다. 또한, 마크다운 파일을 서로 임포트 할 수도 있습니다.
 
 `slides.md` :
 
@@ -513,16 +511,16 @@ Inline content will be ignored
 This page is from another file
 ```
 
-### Frontmatter Merging
+### Frontmatter 병합
 
-You can provide frontmatters from both your main entry and external markdown pages. If there are the same keys in them, the ones from the **main entry have the higher priority**. For example
+메인 진입점과 외부 마크다운 파일에서 모두 frontmatter를 제공할 수 있습니다. 그들 사이에 같은 키가 있다면, **메인 진입점의 것이 우선**합니다. 예를 들어:
 
 `slides.md` :
 
 ```md
 ---
 src: ./cover.md
-background: https://sli.dev/bar.png
+background: https://ko.sli.dev/bar.png
 class: text-center
 ---
 ```
@@ -532,7 +530,7 @@ class: text-center
 ```md
 ---
 layout: cover
-background: https://sli.dev/foo.png
+background: https://ko.sli.dev/foo.png
 ---
 
 # Cover
@@ -540,12 +538,12 @@ background: https://sli.dev/foo.png
 Cover Page
 ```
 
-They will end up being equivalent of the following page:
+이 예제의 결과는 다음 페이지와 동일합니다:
 
 ```md
 ---
 layout: cover
-background: https://sli.dev/bar.png
+background: https://ko.sli.dev/bar.png
 class: text-center
 ---
 
@@ -554,9 +552,9 @@ class: text-center
 Cover Page
 ```
 
-### Page Reusing
+### 페이지 재사용
 
-With the multi-entries support, reusing pages could be straightforward. For example:
+다중 진입점을 사용하면 페이지를 재사용할 수 있습니다. 예를 들어:
 
 ```yaml
 ---
@@ -577,13 +575,13 @@ src: ./content.md
 ---
 ```
 
-## MDC Syntax
+## MDC 문법
 
-> Available since v0.43.0
+> v0.43.0부터 사용 가능
 
-Slidev has and experimental support for [MDC (Markdown Components) Syntax](https://content.nuxtjs.org/guide/writing/mdc) powered by [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc).
+Slidev에서는 [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc)를 사용하여 실험적으로 [MDC (Markdown Components) Syntax](https://content.nuxtjs.org/guide/writing/mdc) 기능을 제공합니다.
 
-You can enable it by add `mdc: true` to the frontmatter of your markdown file.
+`mdc: true`를 마크다운 파일의 frontmatter에 추가하여 활성화할 수 있습니다.
 
 ```md
 ---
@@ -599,4 +597,4 @@ The **default** slot
 ::
 ```
 
-Learn more about [the syntax](https://content.nuxtjs.org/guide/writing/mdc).
+[이 문법](https://content.nuxtjs.org/guide/writing/mdc)에 대해 더 자세히 알아보세요.

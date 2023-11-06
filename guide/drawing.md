@@ -1,20 +1,20 @@
-# Drawing & Annotations
+# 주석 및 그리기
 
-> Available since v0.23
+> v0.23부터 사용 가능
 
-We have [drauu](https://github.com/antfu/drauu) built-in for drawing and annotation that could enhance your presentation further.
+Slidev는 [drauu](https://github.com/antfu/drauu)를 내장하여 프레젠테이션을 더욱 향상시킬 수 있는 그리기 및 주석 기능을 제공합니다.
 
-To start, click the <carbon-pen class="inline-icon-btn"/> icon in the toolbar and start drawing. It's also available in the [Presenter Mode](/guide/presenter-mode). Drawings and annotations you created will be **synced up** automatically across all instances in real-time.
+시작하려면 툴바에서 <carbon-pen class="inline-icon-btn"/> 아이콘을 클릭하고 그리기를 시작하십시오. [프레젠터 모드](/guide/presenter-mode)에서도 사용할 수 있습니다. 생성한 그림 및 주석은 모든 인스턴스에서 자동으로 **실시간으로 동기화**됩니다.
 
 <Tweet id="1424027510342250499" />
 
-## Use with Stylus Pen
+## 스타일러스 펜 사용
 
-When using a stylus pen on a tablet (for example, iPad with Apple Pencil), Slidev could smartly detect the input type. You can directly draw on your slides with the pen without turning on the drawing mode, while having your fingers or mouse control the navigation.
+태블릿의 스타일러스 펜을 사용할 때 (예: Apple Pencil이 장착된 iPad), Slidev는 입력 유형을 스마트하게 감지할 수 있습니다. 펜으로 슬라이드에 직접 그릴 수 있습니다. 그림 모드를 켜지 않고도 손가락이나 마우스로 탐색을 제어할 수 있습니다.
 
-## Persist Drawings
+## 주석 유지
 
-The following frontmatter configuration allows you to persist your drawings as SVGs under `.slidev/drawings` directory and have them inside your exported pdf or hosted site.
+기본적으로, 그림은 프레젠테이션을 닫으면 사라집니다. 그러나, 그림을 유지하고 싶다면, 다음과 같이 설정하십시오. 이 경우, 그림 svg가 `.slidev/drawings` 안에 자동으로 저장됩니다.
 
 ```md
 ---
@@ -23,9 +23,9 @@ drawings:
 ---
 ```
 
-## Disable Drawings
+## 주석 비활성화
 
-Entirely:
+전역:
 
 ```md
 ---
@@ -34,7 +34,7 @@ drawings:
 ---
 ```
 
-Only in Development:
+개발 모드에서만:
 
 ```md
 ---
@@ -43,7 +43,7 @@ drawings:
 ---
 ```
 
-Only in Presenter Mode:
+발표자 모드에서만:
 
 ```md
 ---
@@ -52,9 +52,9 @@ drawings:
 ---
 ```
 
-## Drawing Syncing
+## 그림 동기화
 
-By default, Slidev syncs up your drawings across all instances. If you are sharing your slides with others, you might want to disable the syncing by:
+기본적으로, Slidev는 모든 인스턴스에서 그림을 동기화합니다. 만약 당신이 다른 사람들과 슬라이드를 공유하고 있다면, 다음과 같이 동기화를 비활성화할 수 있습니다.
 
 ```md
 ---
@@ -63,6 +63,6 @@ drawings:
 ---
 ```
 
-With this config, only the drawing from the presenter instance will be able to sync with others.
+이 설정을 사용하면 발표자 인스턴스에서만 그림이 동기화됩니다.
 
 

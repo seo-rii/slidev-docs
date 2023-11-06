@@ -1,10 +1,10 @@
-# Vue Global Context
+# Vue 전역 컨텍스트
 
-Slidev injected a [global Vue context](https://v3.vuejs.org/api/application-config.html#globalproperties) `$slidev` for advanced conditions or navigation controls.
+Slidev는 고급 조건 또는 탐색 컨트롤을 위해 [전역 Vue 컨텍스트](https://v3.vuejs.org/api/application-config.html#globalproperties) `$slidev`를 주입합니다.
 
-## Usage
+## 사용법
 
-You can access it anywhere in your markdown and Vue template, with the ["Mustache" syntax](https://v3.vuejs.org/guide/template-syntax.html#interpolations).
+`$slidev`는 마크다운 및 Vue 템플릿에서 ["Mustache" 구문](https://v3.vuejs.org/guide/template-syntax.html#interpolations)으로 어디서든지 액세스할 수 있습니다.
 
 ```md
 <!-- slides.md -->
@@ -23,11 +23,11 @@ Current page is: {{ $slidev.nav.currentPage }}
 </template>
 ```
 
-## Properties
+## 속성
 
 ### `$clicks`
 
-`$clicks` hold a number of clicks on the current slide. Can be used conditionally to show different content on clicks.
+`$clicks`는 현재 슬라이드에서 클릭 수를 보유합니다. 클릭 수에 따라 조건부로 다른 콘텐츠를 표시할 수 있습니다.
 
 ```html
 <div v-if="$clicks > 3">Content</div>
@@ -35,7 +35,7 @@ Current page is: {{ $slidev.nav.currentPage }}
 
 ### `$page`
 
-`$page` holds the number of the current page, 1-indexed.
+`$page`은 현재 페이지 번호를 보유합니다. 1부터 시작합니다.
 
 ```md
 Page: {{ $page }}
@@ -45,7 +45,7 @@ Is current page active: {{ $page === $slidev.nav.currentPage }}
 
 ### `$renderContext`
 
-`$renderContext` holds the current render context, can be `slide`, `overview`, `presenter` or `previewNext`
+`$renderContext`는 현재 렌더링 컨텍스트를 보유합니다. `slide`, `overview`, `presenter` 또는 `previewNext`일 수 있습니다.
 
 ```md
 <div v-if="$renderContext === 'slide'">
@@ -55,29 +55,29 @@ Is current page active: {{ $page === $slidev.nav.currentPage }}
 
 ### `$slidev.nav`
 
-A reactive object holding the properties and controls of the slides navigation. For examples:
+`$slidev.nav`는 슬라이드 탐색의 속성 및 컨트롤을 보유하는 반응형 객체입니다. 예를 들면:
 
 ```js
-$slidev.nav.next() // go next step
+$slidev.nav.next() // 다음 스텝
 
-$slidev.nav.nextSlide() // go next slide (skip v-clicks)
+$slidev.nav.nextSlide() // 다음 슬라이드(클릭 횟수 무시)
 
-$slidev.nav.go(10) // go slide #10
+$slidev.nav.go(10) // #10 페이지로 이동
 ```
 
 ```js
-$slidev.nav.currentPage // current slide number
+$slidev.nav.currentPage // 현재 슬라이드 번호
 
-$slidev.nav.currentLayout // current layout id
+$slidev.nav.currentLayout // 현재 레이아웃 id
 ```
 
-For more properties available, refer to the [nav.ts](https://github.com/slidevjs/slidev/blob/main/packages/client/logic/nav.ts) exports.
+더 많은 속성들을 사용할 수 있습니다. 자세한 내용은 [nav.ts](https://github.com/slidevjs/slidev/blob/main/packages/client/logic/nav.ts)의 내보내기를 참조하십시오.
 
-> Note: `$slidev.nav.clicks` is a global state while `$clicks` is local to each slide. It's recommended to **use `$clicks` over `$slidev.nav.clicks`** to avoid clicks changed been triggered on page transitions.
+> 참고: `$slidev.nav.clicks`는 전역 상태이고 `$clicks`는 각 슬라이드에 대해 로컬입니다. 페이지 전환 시 클릭 변경이 트리거되는 것을 방지하기 위해 **`$clicks`를 사용하여 `$slidev.nav.clicks`를 피하는 것이 좋습니다.**.
 
 ### `$slidev.configs`
 
-A reactive object holding the parsed [configurations in the first frontmatter](/custom/#frontmatter-configures) of your `slides.md`. For example
+`slides.md`의 [첫 번째 프론트매터에 있는 구성](/custom/#frontmatter-configures)을 보유하는 반응형 객체입니다. 예를 들면:
 
 ```yaml
 ---
@@ -91,7 +91,7 @@ title: My First Slidev!
 
 ### `$slidev.themeConfigs`
 
-A reactive object holding the parsed theme configurations.
+`$slidev.themeConfigs`는 파싱된 테마 구성을 보유하는 반응형 객체입니다.
 
 ```yaml
 ---
@@ -107,6 +107,6 @@ themeConfig:
 
 ### `$nav`
 
-> Available since v0.43.0
+> v0.43.0 이상에서 사용 가능
 
-A shorthand of `$slidev.nav`.
+`$slidev.nav`의 약어입니다.

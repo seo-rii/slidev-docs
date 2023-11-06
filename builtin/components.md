@@ -1,57 +1,57 @@
-# Components
+# 컴포넌트
 
-## Built-in Components
+## 빌트인 컴포넌트
 
 ### `Arrow`
 
-Draw an arrow.
+화살표를 그립니다.
 
-#### Usage
+#### 사용법
 
 ~~~md
 <Arrow x1="10" y1="20" x2="100" y2="200" />
 ~~~
 
-Or:
+또는:
 
 ~~~md
 <Arrow v-bind="{ x1:10, y1:10, x2:200, y2:200 }" />
 ~~~
 
-Parameters:
+파라미터:
 
-* `x1` (`string | number`, required): start point x position
-* `y1` (`string | number`, required): start point y position
-* `x2` (`string | number`, required): end point x position
-* `y2` (`string | number`, required): end point x position
-* `width` (`string | number`, default: `2`): line width
-* `color` (`string`, default: `'currentColor'`): line color
+* `x1` (`string | number`, 필수): 시작 x좌표
+* `y1` (`string | number`, 필수): 시작 y좌표
+* `x2` (`string | number`, 필수): 종료 x좌표
+* `y2` (`string | number`, 필수): 종료 y좌표
+* `width` (`string | number`, 기본값: `2`): 선 넓이
+* `color` (`string`, 기본값: `'currentColor'`): 선 색상
 
 ### `AutoFitText`
 
-> Experimental
+> 실험적인 컴포넌트입니다.
 
-Box inside which the font size will automatically adapt to fit the content. Similar to PowerPoint or Keynote TextBox.
+박스 안의 폰트 크기가 자동으로 콘텐츠에 맞게 조정되는 텍스트를 그립니다. PowerPoint 또는 Keynote의 텍스트 상자와 유사합니다.
 
-#### Usage
+#### 사용법
 
 ~~~md
 <AutoFitText :max="200" :min="100" modelValue="Some text"/>
 ~~~
 
-Parameters:
+파라미터:
 
-* `max` (`string | number`, default `100`): Maximum font size
-* `min` (`string | number`, default `30`): Minimum font size
-* `modelValue` (`string`, default `''`): text content
+* `max` (`string | number`, 기본값 `100`): 최대 폰트 크기
+* `min` (`string | number`, 기본값 `30`): 최소 폰트 크기
+* `modelValue` (`string`, 기본값 `''`): 텍스트 내용
 
 ### `LightOrDark`
 
-Use it to display one thing or another depending on the active light or dark theme.
+현재 활성화된 라이트 또는 다크 테마에 따라 다른 내용을 표시합니다.
 
-#### Usage
+#### 사용법
 
-Use it with the two named Slots `#dark` and `#light`:
+`LightOrDark` 컴포넌트를 사용하면 두 개의 이름이 지정된 슬롯 `#dark`와 `#light`를 사용할 수 있습니다:
 ~~~md
 <LightOrDark>
   <template #dark>Dark mode is on</template>
@@ -59,7 +59,7 @@ Use it with the two named Slots `#dark` and `#light`:
 </LightOrDark>
 ~~~
 
-Provided props on `LightOrDark` component will be available using scoped slot props:
+`LightOrDark` 컴포넌트에 제공된 props는 스코프가 지정된 슬롯 props를 사용하여 사용할 수 있습니다:
 ~~~md
 <LightOrDark width="100" alt="some image">
   <template #dark="props">
@@ -71,7 +71,7 @@ Provided props on `LightOrDark` component will be available using scoped slot pr
 </LightOrDark>
 ~~~
 
-You can provide markdown in the slots, but you will need to surround the content with blank lines:
+슬롯에 마크다운을 제공할 수 있지만 내용을 빈 줄로 둘러싸야 합니다:
 ~~~md
 <LightOrDark>
   <template #dark>
@@ -89,9 +89,9 @@ You can provide markdown in the slots, but you will need to surround the content
 
 ### `Link`
 
-Insert a link you can use to navigate to a given slide.
+주어진 슬라이드로 이동할 수 있는 링크를 삽입합니다.
 
-#### Usage
+#### 사용법
 
 ~~~md
 <Link to="42">Go to slide 42</Link>
@@ -99,13 +99,12 @@ Insert a link you can use to navigate to a given slide.
 <Link to="solutions" title="Go to solutions"/>
 ~~~
 
-Parameters:
+파라미터:
 
-* `to` (`string | number`): The path of the slide to navigate to (slides starts from `1`)
-* `title` (`string`): The title to display
+* `to` (`string | number`): 이동할 슬라이드 번호 또는 별칭(1부터 시작)
+* `title` (`string`): 링크에 표시할 툴팁
 
-One can use a string as `to`, provided the corresponding route exists, e.g.
-
+대응하는 경로가 존재한다면 문자열을 `to`로 사용할 수 있습니다. 예를 들어:
 ~~~md
 ---
 routeAlias: solutions
@@ -116,25 +115,25 @@ routeAlias: solutions
 
 ### `RenderWhen`
 
-Render slot only when the context match (for example when we are in presenter view).
+특정한 컨텍스트에서만 렌더링합니다. (예를 들어, 프리젠터 뷰에서만 렌더링)
 
-#### Usage
+#### 기본값
 
 ~~~md
 <RenderWhen context="presenter">This will only be rendered in presenter view.</RenderWhen>
 ~~~
 
-Context type: `'main' | 'slide' | 'overview' | 'presenter' | 'previewNext'`
+컨텍스트 종류: `'main' | 'slide' | 'overview' | 'presenter' | 'previewNext'`
 
-Parameters:
+파라미터:
 
-* `context` (`Context | Context[]`): context or array of contexts you want the slot to be rendered
+* `context` (`Context | Context[]`): 렌더링할 컨텍스트
 
 ### `SlideCurrentNo`
 
-Current slide number.
+현재 슬라이드 번호를 표시합니다.
 
-#### Usage
+#### 기본값
 
 ~~~md
 <SlideCurrentNo />
@@ -142,9 +141,9 @@ Current slide number.
 
 ### `SlidesTotal`
 
-Total number of slides.
+슬라이드의 총 개수를 표시합니다.
 
-#### Usage
+#### 기본값
 
 ~~~md
 <SlidesTotal />
@@ -152,11 +151,11 @@ Total number of slides.
 
 ### `Titles`
 
-Insert the main title from a slide parsed as HTML.
+HTML로 구문 분석된 슬라이드의 메인 제목을 삽입합니다.
 
-Titles and title levels get automatically retrieved from the first title element of each slides.
+제목 및 제목 수준은 각 슬라이드의 첫 번째 제목 요소에서 자동으로 검색됩니다.
 
-You can override this automatic behaviour for a slide by using the front matter syntax:
+front matter 구문을 사용하여 슬라이드에 대한 이 자동 동작을 재정의할 수 있습니다:
 ```yml
 ---
 title: Amazing slide title
@@ -164,57 +163,57 @@ level: 2
 ---
 ```
 
-#### Usage
+#### 기본값
 
-The `<Titles>` component is a virtual component you can import with:
+`<Titles>` 컴포넌트는 다음과 같이 불러올 수 있는 가상 컴포넌트입니다:
 ```js
 import Titles from '/@slidev/titles.md'
 ```
 
-Then you can use it with:
+그런 다음 다음과 같이 사용할 수 있습니다:
 ~~~md
 <Titles no="42" />
 ~~~
 
-Parameters:
+파라미터:
 
-* `no` (`string | number`): The number of the slide to display the title from (slides starts from `1`)
+* `no` (`string | number`): 제목을 표시할 슬라이드 번호 (슬라이드는 `1`부터 시작)
 
 ### `Toc`
 
-Insert a Table Of Content.
+목차를 삽입합니다.
 
-If you want a slide to not appear in the `<Toc>` component, you can use in the front matter block of the slide:
+만일 제목을 목차에 표시하고 싶지 않다면, 슬라이드의 front matter 블록에 다음을 사용하세요:
 ```yml
 ---
 hideInToc: true
 ---
 ```
 
-Titles are displayed using the [`<Titles>` component](#titles)
+[`<Titles>` component](#titles) 컴포넌트를 사용하여 만들어진 제목을 표시합니다.
 
-#### Usage
+#### 사용법
 
 ~~~md
 <Toc />
 ~~~
 
-Parameters:
+파라미터:
 
-* `columns` (`string | number`, default: `1`): The number of columns of the display
-* `listClass` (`string | string[]`, default: `''`): Classes to apply to the table of contents list
-* `maxDepth` (`string | number`, default: `Infinity`): The maximum depth level of title to display
-* `minDepth` (`string | number`, default: `1`): The minimum depth level of title to display
-* `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, default: `'all'`):
-  * `'all'`: Display all items
-  * `'onlyCurrentTree'`: Display only items that are in current tree (active item, parents and children of active item)
-  * `'onlySiblings'`: Display only items that are in current tree and their direct siblings
+* `columns` (`string | number`, 기본값: `1`): 표시할 열의 수
+* `listClass` (`string | string[]`, 기본값: `''`): 표시할 목록에 적용할 클래스
+* `maxDepth` (`string | number`, 기본값: `Infinity`): 표시할 제목의 최대 깊이
+* `minDepth` (`string | number`, 기본값: `1`): 표시할 제목의 최소 깊이
+* `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, 기본값: `'all'`):
+  * `'all'`: 모든 항목을 표시합니다.
+  * `'onlyCurrentTree'`: 현재 트리에 있는 항목과 해당 항목의 직계 자식만 표시합니다.
+  * `'onlySiblings'`: 현재 트리에 있는 항목과 해당 항목의 형제만 표시합니다.
 
 ### `Transform`
 
-Apply scaling or transforming to elements.
+특정 요소에 스케일링 또는 변환을 적용합니다.
 
-#### Usage
+#### 사용법
 
 ~~~md
 <Transform :scale="0.5">
@@ -222,54 +221,54 @@ Apply scaling or transforming to elements.
 </Transform>
 ~~~
 
-Parameters:
+파라미터:
 
-* `scale` (`number | string`, default `1`): transform scale value
-* `origin` (`string`, default `'top left'`): transform origin value
+* `scale` (`number | string`, 기본값 `1`): 크기 비율
+* `origin` (`string`, 기본값 `'top left'`): 변환 기준점
 
 ### `Tweet`
 
-Embed a tweet.
+트위터 트윗을 삽입합니다.
 
-#### Usage
+#### 사용법
 
 ~~~md
 <Tweet id="20" />
 ~~~
 
-Parameters:
+파라미터:
 
-* `id` (`number | string`, required): id of the tweet
-* `scale` (`number | string`, default `1`): transform scale value
-* `conversation` (`string`, default `'none'`): [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+* `id` (`number | string`, 필수): 트윗의 ID
+* `scale` (`number | string`, 기본값 `1`): 트윗의 크기수
+* `conversation` (`string`, 기본값 `'none'`): [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
 
 ### `VAfter`, `VClick` and `VClicks`
 
-See https://sli.dev/guide/animations.html
+https://ko.sli.dev/guide/animations.html 을 참고하세요.
 ### `Youtube`
 
-Embed a youtube video.
+유튜브 영상을 삽입합니다.
 
-#### Usage
+#### 기본값
 
 ~~~md
 <Youtube id="luoMHjh-XcQ" />
 ~~~
 
-Parameters:
+파라미터:
 
-* `id` (`string`, required): id of the youtube video
-* `width` (`number`): width of the video
-* `height` (`number`): height of the video
+* `id` (`string`, 필수): 유튜브 영상 ID
+* `width` (`number`): 영상 넓이
+* `height` (`number`): 영상 높이
 
-## Custom Components
+## 커스텀 컴포넌트
 
-Create a directory `components/` under your project root, and simply put your custom Vue components under it, then you can use it with the same name in your markdown file!
+`components/` 디렉토리를 프로젝트 루트에 생성하고, 그 안에 커스텀 Vue 컴포넌트를 만들어 사용할 수 있습니다. 마크다운 파일에서는 동일한 이름으로 사용할 수 있습니다!
 
-Read more in the [Customization](/custom/directory-structure#components) section.
+[디렉토리 구조](/custom/directory-structure#components) 섹션을 읽어보세요.
 
-## Theme-provided Components
+## 테마 제공 컴포넌트
 
-Themes can provide components as well. Please read their documentations for what they have provided.
+테마는 컴포넌트를 제공할 수 있습니다. 제공된 컴포넌트에 대해서는 문서를 읽어보세요.
 
-Check more in the [directory structure](/custom/directory-structure) section.
+또는 [디렉토리 구조](/custom/directory-structure) 섹션을 확인하세요.

@@ -1,30 +1,30 @@
-# Directory Structure
+# 폴더 구조
 
-Slidev employs some directory structure conventions to minimize the configuration surface and to make the functionality extensions flexible and intuitive.
+Slidev는 구성을 최소화하고 기능 확장을 유연하고 직관적으로 만들기 위해 일부 디렉토리 구조 규칙을 사용합니다.
 
-The basic structure is as follows:
+기본 구조는 다음과 같습니다.
 
 ```bash
 your-slidev/
-  ├── components/       # custom components
-  ├── layouts/          # custom layouts
-  ├── public/           # static assets
-  ├── setup/            # custom setup / hooks
-  ├── styles/           # custom style
-  ├── index.html        # injections to index.html
-  ├── slides.md         # the main slides entry
-  └── vite.config.ts    # extending vite config
+  ├── components/       # 커스텀 컴포넌트
+  ├── layouts/          # 커스텀 레이아웃
+  ├── public/           # 정적 파일
+  ├── setup/            # 커스텀 후크
+  ├── styles/           # 커스텀 스타일
+  ├── index.html        # index.html 인젝션
+  ├── slides.md         # 메인 슬라이드
+  └── vite.config.ts    # vite 설정파일 확장
 ```
 
-All of them are optional.
+모든 항목은 선택 사항입니다.
 
-## Components
+## 컴포넌트
 
-Conventions: `./components/*.{vue,js,ts,jsx,tsx,md}`
+경로: `./components/*.{vue,js,ts,jsx,tsx,md}`
 
-Components inside this directory can be directly used in the slides Markdown with the same component name as the file name.
+이 디렉토리의 컴포넌트는 슬라이드 Markdown에서 파일 이름과 동일한 컴포넌트 이름으로 직접 사용할 수 있습니다.
 
-For example:
+예를 들어:
 
 ```bash
 your-slidev/
@@ -48,13 +48,13 @@ your-slidev/
 </hello-world>
 ```
 
-This feature is powered by [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components), learn more there.
+이 기능은 [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components)에 의해 제공됩니다. 자세한 내용은 해당 문서를 참조하십시오.
 
-Slidev also provides some [built-in components](/builtin/components) for you to use.
+Slidev는 사용할 수 있는 [내장 컴포넌트](/builtin/components)도 제공합니다.
 
-## Layouts
+## 레이아웃
 
-Conventions: `./layouts/*.{vue,js,ts,jsx,tsx}`
+경로: `./layouts/*.{vue,js,ts,jsx,tsx}`
 
 ```
 your-slidev/
@@ -64,7 +64,7 @@ your-slidev/
       └── my-cool-theme.vue
 ```
 
-You can use any filename for your layout. You then reference your layout in you YAML header using the filename.
+레이아웃을 위해 원하는 파일 이름을 사용할 수 있습니다. 그런 다음 YAML 헤더에서 파일 이름을 사용하여 레이아웃을 참조합니다.
 
 ```yaml
 ---
@@ -72,9 +72,9 @@ layout: my-cool-theme
 ---
 ```
 
-If the layout you provide has the same name as a built-in layout or a theme layout, your custom layout will take precedence over the built-in/theme layout. The priority order is `local > theme > built-in`.
+만일 제공한 레이아웃이 내장 레이아웃 또는 테마 레이아웃과 같은 이름을 가지고 있다면, 커스텀 레이아웃이 내장/테마 레이아웃보다 우선합니다. 우선순위는 `local > theme > built-in`입니다.
 
-In the layout component, use `<slot/>` for the slide content. For example:
+레이아웃 컴포넌트에서 슬라이드 내용에 `<slot/>`을 사용하십시오. 예를 들어:
 
 ```html
 <!-- default.vue -->
@@ -85,17 +85,17 @@ In the layout component, use `<slot/>` for the slide content. For example:
 </template>
 ```
 
-## Public
+## 퍼블릭
 
-Conventions: `./public/*`
+경로: `./public/*`
 
-Assets in this directory will be served at root path `/` during dev, and copied to the root of the dist directory as-is. Read more about [Vite's `public` directory](https://vitejs.dev/guide/assets.html#the-public-directory).
+이 디렉토리의 파일은 개발 중에 루트 경로 `/`에서 제공되며 dist 디렉토리의 루트에 그대로 복사됩니다. [Vite의 `public` 디렉토리](https://vitejs.dev/guide/assets.html#the-public-directory)에 대해 자세히 읽어보십시오.
 
-## Style
+## 스타일
 
-Conventions: `./style.css` | `./styles/index.{css,js,ts}`
+경로: `./style.css` | `./styles/index.{css,js,ts}`
 
-Files following this convention will be injected to the App root. If you need to import multiple css entries, you can create the following structure and managing the import order yourself.
+이 디렉토리의 스타일은 슬라이드에 적용됩니다. 만일 여러개의 css 파일을 import하고 싶다면, 다음과 같은 구조를 만들고 import 순서를 직접 관리하십시오.
 
 ```bash
 your-slidev/
@@ -115,7 +115,7 @@ import './code.css'
 import './layouts.css'
 ```
 
-Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://postcss.org/), so you can use css nesting and [at-directives](https://windicss.org/features/directives.html) out-of-box. For example:
+스타일은 [Unocss](https://unocss.dev/)와 [PostCSS](https://postcss.org/)를 통해 처리됩니다. 따라서 css 중첩과 [at-directives](https://windicss.org/features/directives.html)를 기본으로 사용할 수 있습니다. 예를 들어:
 
 ```less
 .slidev-layout {
@@ -135,15 +135,15 @@ Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://
 }
 ```
 
-[Learn more about the syntax](https://windicss.org/features/directives.html).
+[문법에 대해 더 자세히 알아보세요](https://windicss.org/features/directives.html).
 
 ## `index.html`
 
-Conventions: `index.html`
+경로: `index.html`
 
-The `index.html` provides the ability to inject meta tags and/or scripts to the main `index.html`
+`index.html`은 메인 `index.html`에 메타 태그와/또는 스크립트를 인젝션할 수 있는 기능을 제공합니다.
 
-For example, for the following custom `index.html`:
+예를 들어, 다음과 같은 커스텀 `index.html`을 사용하면:
 
 ```html
 <!-- ./index.html -->
@@ -157,7 +157,7 @@ For example, for the following custom `index.html`:
 </body>
 ```
 
-The final hosted `index.html` will be:
+최종적으로 생성되는 `index.html`은 다음과 같습니다:
 
 ```html
 <!DOCTYPE html>
@@ -179,9 +179,9 @@ The final hosted `index.html` will be:
 </html>
 ```
 
-## Global Layers
+## 글로벌 레이어
 
-Conventions: `global-top.vue` | `global-bottom.vue`
+경로: `global-top.vue` | `global-bottom.vue`
 
-Learn more: [Global Layers](/custom/global-layers)
+[Global Layers](/custom/global-layers)에서 더 자세히 알아보세요.
 

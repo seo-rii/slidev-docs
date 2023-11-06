@@ -1,39 +1,38 @@
-# Layouts
+# 레이아웃
 
-## Built-in Layouts
+## 빌트인 레이아웃
 
-> As themes may override layouts behaviour, the best way to know exactly the usage, parameters and examples is referring their documentation.
-
+> 테마는 레이아웃 동작을 재정의할 수 있으므로 사용, 매개변수 및 예제를 정확히 알 수 있는 가장 좋은 방법은 해당 문서를 참조하는 것입니다.
 
 ### `center`
 
-Displays the content in the middle of the screen.
+화면 중앙에 내용을 표시합니다.
 
 ### `cover`
 
-Used to display the cover page for the presentation, may contain the presentation title, contextualization, etc.
+프레젠테이션의 커버 페이지를 표시하는 데 사용됩니다. 프레젠테이션 제목, 문맥화 등을 포함할 수 있습니다.
 
 ### `default`
 
-The most basic layout, to display any kind of content.
+어떤 종류의 내용이든 표시할 수 있는 가장 기본적인 레이아웃입니다.
 
 ### `end`
 
-The final page for the presentation.
+프레젠테이션의 마지막 페이지를 표시합니다.
 
 ### `fact`
 
-To show some fact or data with a lot of prominence on the screen.
+화면에서 많은 중요성을 가진 사실이나 데이터를 표시합니다.
 
 ### `full`
 
-Use all the space of the screen to display the content.
+화면의 모든 공간을 내용 표시에 사용합니다.
 
 ### `image-left`
 
-Shows an image on the left side of the screen, the content will be placed on the right side.
+화면 왼쪽에 이미지를 표시하고 내용을 오른쪽에 배치합니다.
 
-#### Usage
+#### 사용법
 
 ```yaml
 ---
@@ -49,9 +48,9 @@ class: my-cool-content-on-the-right
 
 ### `image-right`
 
-Shows an image on the right side of the screen, the content will be placed on the left side.
+화면 오른쪽에 이미지를 표시하고 내용을 왼쪽에 배치합니다.
 
-#### Usage
+#### 사용법
 
 ```yaml
 ---
@@ -67,9 +66,9 @@ class: my-cool-content-on-the-left
 
 ### `image`
 
-Shows an image as the main content of the page.
+화면의 주요 내용으로 이미지를 표시합니다.
 
-#### Usage
+#### 사용법
 
 ```yaml
 ---
@@ -83,9 +82,9 @@ image: ./path/to/the/image
 
 ### `iframe-left`
 
-Shows a web page on the left side of the screen, the content will be placed on the right side.
+화면 왼쪽에 웹 페이지를 표시하고 내용을 오른쪽에 배치합니다.
 
-#### Usage
+#### 사용법
 
 ```yaml
 ---
@@ -101,9 +100,9 @@ class: my-cool-content-on-the-right
 
 ### `iframe-right`
 
-Shows a web page on the right side of the screen, the content will be placed on the left side.
+화면 오른쪽에 웹 페이지를 표시하고 내용을 왼쪽에 배치합니다.
 
-#### Usage
+#### 사용법
 
 ```yaml
 ---
@@ -119,9 +118,9 @@ class: my-cool-content-on-the-left
 
 ### `iframe`
 
-Shows a web page as the main content of the page.
+페이지 내용의 주요 내용으로 웹 페이지를 표시합니다.
 
-#### Usage
+#### 사용법
 
 ```yaml
 ---
@@ -135,29 +134,29 @@ url: https://github.com/slidevjs/slidev
 
 ### `intro`
 
-To introduce the presentation, usually with the presentation title, a short description, the author, etc.
+프레젠테이션의 시작을 표시합니다. 일반적으로 프레젠테이션 제목, 간단한 설명, 저자 등을 포함합니다.
 
 ### `none`
 
-A layout without any existent styling.
+아무 레이아웃도 사용하지 않습니다.
 
 ### `quote`
 
-To display a quotation with prominience.
+인용문을 눈에 띄게 표시합니다.
 
 ### `section`
 
-Used to mark the beginning of a new presentation section.
+프레젠테이션 섹션의 시작을 표시합니다.
 
 ### `statement`
 
-Make an affirmation/statement as the main page content.
+페이지 내용으로 단언/문장을 만듭니다.
 
 ### `two-cols`
 
-Separates the page content in two columns.
+페이지 내용을 두 개의 열로 나눕니다.
 
-#### Usage
+#### 사용법
 
 
 ```md
@@ -178,9 +177,9 @@ This shows on the right
 
 ### `two-cols-header`
 
-Separates the upper and lower lines of the page content, and the second line separates the left and right columns.
+페이지 내용을 두 개의 열로 나눕니다. 첫 번째 줄은 페이지 내용의 상단과 하단을 구분하고, 두 번째 줄은 왼쪽과 오른쪽 열을 구분합니다.
 
-#### Usage
+#### 사용법
 
 
 ```md
@@ -203,12 +202,12 @@ This shows on the left
 This shows on the right
 ```
 
-## Custom Layouts
+## 커스텀 레이아웃
 
-Create a directory `layouts/` under your project root, and simply put your custom Vue layout components under it.
+`layouts/` 디렉토리를 프로젝트 루트에 만들고 사용자 정의 Vue 레이아웃 컴포넌트를 그 안에 넣으면 됩니다.
 
-Read more in the [Customization](/custom/directory-structure#layouts) section.
+자세한 내용은 [커스터마이징](/custom/directory-structure#layouts) 섹션을 참조하세요.
 
-## Theme-provided Layouts
+## 테마 제공 레이아웃
 
-Themes can provide layouts or override existing ones. Please read their documentation for what they have provided.
+테마는 새로운 레이아웃을 제공하거나 기존의 것을 재정의할 수 있습니다. 제공된 레이아웃에 대해서는 해당 문서를 읽어보세요.

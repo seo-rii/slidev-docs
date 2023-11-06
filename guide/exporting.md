@@ -1,85 +1,85 @@
-# Exporting
+# 저장하기
 
-## Slides
+## 슬라이드
 
 ### PDF
 
-> Exporting to PDF or PNG relies on [Playwright](https://playwright.dev) for rendering. You will therefore need to install [`playwright-chromium`](https://playwright.dev/docs/installation#download-single-browser-binary) to use this feature.
-> If you are doing exporting in a CI environment, [the playwright CI guide](https://playwright.dev/docs/ci) can be helpful.
+> PDF 또는 PNG로 내보내기는 렌더링을 위해 [Playwright](https://playwright.dev)를 사용합니다. 따라서 이 기능을 사용하려면 [`playwright-chromium`](https://playwright.dev/docs/installation#download-single-browser-binary)을 설치해야 합니다.
+> CI 환경에서 내보내기를 수행하는 경우 [playwright CI 가이드](https://playwright.dev/docs/ci)가 도움이 될 수 있습니다.
 
-Install `playwright-chromium`
+`playwright-chromium`를 설치하세요.
 
 ```bash
 $ npm i -D playwright-chromium
 ```
 
-Now export your slides to PDF using the following command
+그 다음, 다음 명령을 실행하여 슬라이드를 PDF로 내보냅니다.
 
 ```bash
 $ slidev export
 ```
 
-After a few seconds, your slides will be ready at `./slides-export.pdf`.
+몇 초만 기다리면 `./slides-export.pdf`에 슬라이드가 준비됩니다.
 
-### PNGs and Markdown
+### PNG 이미지와 마크다운
 
-When passing in the `--format png` option, Slidev will export PNG images for each slide instead of a PDF.
+`--format png` 옵션을 전달하면 슬라이드마다 PDF 대신 PNG 이미지를 내보냅니다.
 
 ```bash
 $ slidev export --format png
 ```
 
-You can also compile a markdown file composed of compiled png using `--format md`.
+이미지를 마크다운 파일로 내보내려면 `--format md`를 사용하여 컴파일된 png로 구성된 마크다운 파일을 컴파일할 수 있습니다.
 
 ```bash
 $ slidev export --format md
 ```
 
-### Dark mode
+### 다크 모드
 
-In case you want to export your slides using the dark version of the theme, use the `--dark` option:
+만일 다크 모드 테마를 사용하여 슬라이드를 내보내고 싶다면 `--dark` 옵션을 사용하세요.
 
 ```bash
 $ slidev export --dark
 ```
 
-### Export Clicks Steps
+### 클릭 단계 내보내기
 
-> Available since v0.21
+> v0.21부터 사용 가능
 
-By default, Slidev exports one page per slide with clicks animations disabled. If you want export slides with multiple steps into multiple pages, pass the `--with-clicks` option.
+기본적으로 Slidev는 클릭 애니메이션을 비활성화하고 슬라이드 당 하나의 페이지로 내보냅니다. 클릭 단계를 여러 페이지로 내보내려면 `--with-clicks` 옵션을 전달하세요.
 
 ```bash
 $ slidev export --with-clicks
 ```
 
-### Slide range
+### 슬라이드 범위
 
-You can also specify a range of slides to export with the `--range` option.
+`--range` 옵션으로 내보낼 슬라이드의 범위를 지정할 수 있습니다.
 
 ```bash
 $ slidev export --range 1,4-5,6
 ```
 
-### PDF outline
+### PDF 아웃라인
 
-> Available since v0.36.10
+> v0.36.10부터 사용 가능
 
-You can generate the PDF outline by passing the `--with-toc` option.
+`--with-toc` 옵션을 전달하여 PDF 아웃라인을 생성할 수 있습니다.
 
 ```bash
 $ slidev export --with-toc
 ```
 
-### Output filename
+### 파일 이름 지정
 
-You can specify the output filename with the `--output` option.
+`--output` 옵션으로 출력 파일 이름을 지정할 수 있습니다.
 
 ```bash
 $ slidev export --output my-pdf-export
 ```
 
-Or in the frontmatter configuration:
+또는, 프론트매터 설정에서:
 
 ```yaml
 ---
@@ -87,64 +87,51 @@ exportFilename: my-pdf-export
 ---
 ```
 
-### Export a range of slides
+### 여러 진입점 등록
 
-By default, all slides in the presentation are exported. If you want to export a specific slide or a range of slides you can set the `--range` option and specify which slides you would like to export. 
-
-```bash
-$ slidev export --range 1,6-8,10
-```
-
-This option accepts both specific slide numbers and ranges.
-
-The example above would export slides 1,6,7,8, and 10.
-
-
-### Multiple entries
-
-You can also export multiple slides at once.
+`--entry` 옵션을 사용하여 여러 진입점을 지정할 수 있습니다. 이 옵션은 여러 슬라이드를 한 번에 내보낼 때 유용합니다.
 
 ```bash
 $ slidev export slides1.md slides1.md
 ```
 
-Or
+또는,
 
 ```bash
 $ slidev export *.md
 ```
 
-In this case, each input file will generate its own PDf file.
+이 경우, 각 입력 파일은 출력 디렉토리에 빌드된 폴더를 생성합니다.
 
-## Presenter notes
+## 발표자 노트
 
-> Available since v0.36.8
+> v0.36.8부터 사용 가능
 
-Export only the presenter notes (the last comment block for each slide) into a text document in PDF.
+`--notes` 옵션을 사용하여 발표자 노트만 내보낼 수 있습니다.
 
 ```bash
 $ slidev export-notes
 ```
 
-This command also accept multiple entries like for the [export command](#multiple-entries)
+이 명령은 [export command](#multiple-entries)와 같이 여러 진입점 옵션과 함께 사용할 수 있습니다.
 
 ## Single-Page Application (SPA)
 
-See [Static Hosting](/guide/hosting).
+[Static Hosting](/guide/hosting)을 참고하세요.
 
-## Troubleshooting
+## 문제 해결
 
-### Timeout
+### 타임아웃
 
-For big presentation you might want to increase the playwrigth timeout with `--timeout`
+만일 큰 프레젠테이션을 내보내려면 `--timeout`으로 playwrigth 타임아웃을 늘릴 수 있습니다.
 
 ```bash
 $ slidev export --timeout 60000
 ```
 
-### Executable path
+### 크롬 바이너리 경로
 
-You can set the browser executable path for playwright using `--executable-path`
+브라우저가 자동으로 검색되지 않았을 경우, `--executable-path`를 사용하여 브라우저 바이너리 경로를 직접 지정할 수 있습니다.
 
 ```bash
 $ slidev export --executable-path [path_to_chromium]

@@ -1,10 +1,10 @@
-# Fonts
+# 폰트
 
-> Available since v0.20
+> v0.20부터 사용 가능
 
-While you can use HTML and CSS to custom the fonts and style for your slides as you want, Slidev also provides a convenient way to use them effortlessly.
+Slidev는 HTML 및 CSS를 사용하여 슬라이드에 사용되는 폰트와 스타일을 사용자 정의할 수 있지만, Slidev는 노력없이 사용할 수 있는 편리한 방법을 제공합니다.
 
-In your frontmatter, configure as following
+frontmatter에서 다음과 같이 구성하십시오.
 
 ```yaml
 ---
@@ -18,13 +18,13 @@ fonts:
 ---
 ```
 
-And that's all.
+이것이 전부입니다!
 
-Fonts will be **imported automatically from [Google Fonts](https://fonts.google.com/)**. That means you can use any fonts available on Google Fonts directly.
+폰트는 [Google Fonts](https://fonts.google.com/)에서 **자동으로 가져옵니다**. 즉, Google Fonts에서 사용 가능한 모든 폰트를 직접 사용할 수 있습니다.
 
-## Local Fonts
+## 로컬 폰트
 
-By default, Slidev assumes all the fonts specified via `fonts` configurations come from Google Fonts. If you want to use local fonts, specify the `fonts.local` to opt-out the auto-importing. 
+기본적으로 `fonts` 구성을 통해 지정된 모든 폰트는 Google Fonts에서 가져온 것으로 간주됩니다. 로컬 폰트를 사용하려면 `fonts.local`을 지정하여 자동 가져오기를 비활성화하십시오.
 
 ```yaml
 ---
@@ -36,9 +36,9 @@ fonts:
 ---
 ```
 
-## Weights & Italic
+## 굵기 & 기울임
 
-By default, Slidev imports three weights `200`,`400`,`600` for each font. You can configure them by:
+기본적으로 Slidev는 각 폰트에 대해 세 가지 굵기 `200`,`400`,`600`을 가져옵니다. 다음과 같이 구성할 수 있습니다.
 
 ```yaml
 ---
@@ -51,11 +51,11 @@ fonts:
 ---
 ```
 
-This configuration applies to all web fonts. For more fine-grained controls of each font's weights, you will need to manually import them with [HTML](/custom/directory-structure.html#index-html) and CSS.
+이 구성은 모든 웹 폰트에 적용됩니다. 각 폰트의 굵기를 더 세밀하게 제어하려면 [HTML](/custom/directory-structure.html#index-html) 및 CSS로 수동으로 가져와야 합니다.
 
-## Fallback Fonts
+## 폴백 폰트
 
-For most of the scenarios, you only need to specify the "special font" and Slidev will append the fallback fonts for you, for example:
+기본적으로 Slidev는 각 폰트에 대해 다음과 같은 폴백 폰트를 가져옵니다.
 
 ```yaml
 ---
@@ -66,7 +66,7 @@ fonts:
 ---
 ```
 
-will result in 
+이것의 결과는:
 
 ```css
 .font-sans {
@@ -80,7 +80,7 @@ will result in
 }
 ```
 
-If you want to disable the fallback fonts, configure as following
+만일 폴백 폰트를 비활성화하고 싶다면, 다음과 같이 구성하십시오:
 
 ```yaml
 ---
@@ -90,12 +90,12 @@ fonts:
 ---
 ```
 
-## Providers
+## 제공자
 
 - Options: `google` | `none`
 - Default: `google`
 
-Currently, only Google Fonts is supported, we are planned to add more providers in the future. Specify to `none` will disable the auto-importing feature entirely and treat all the fonts local.
+폰트 제공자를 지정할 수 있습니다. 현재는 Google Fonts만 지원되며, 앞으로 더 많은 제공자를 추가할 예정입니다. `none`으로 지정하면 자동 가져오기 기능이 완전히 비활성화되고 모든 폰트가 로컬로 처리됩니다.
 
 ```yaml
 ---

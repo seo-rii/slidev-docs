@@ -1,41 +1,41 @@
-# Write an Addon
+# 애드온 작성하기
 
-> Available since v0.32.1
+> v0.32.1 버전부터 사용 가능
 
-## Capability
+## 기능
 
-An addon can contribute to the following points:
+애드온은 다음과 같은 기능을 제공할 수 있습니다:
 
-- Global styles (use with caution has it is more the role of [themes](/themes/use))
-- Provide custom layouts or override the existing one
-- Provide custom components or override the existing one
-- Extend UnoCSS/Windi CSS configurations
-- Configure tools like Monaco and Prism
+- 글로벌 스타일 (주의해서 사용하세요. [테마](/themes/use)의 역할입니다.)
+- 커스텀 레이아웃 또는 기존 레이아웃 재정의
+- 커스텀 컴포넌트 또는 기존 컴포넌트 재정의
+- UnoCSS/Windi CSS 구성 확장
+- Monaco 및 Prism과 같은 도구 구성
 
-## Conventions
+## 규칙
 
-Addons are published to npm registry, and they should follow the conventions below:
+애드온은 npm 레지스트리에 게시되어야 하며, 다음 규칙을 따라야 합니다:
 
-- Package name should start with `slidev-addon-`, for example: `slidev-addon-awesome`
-- Add `slidev-addon` and `slidev` in the `keywords` field of your `package.json`
+- `slidev-addon-`로 시작하는 패키지 이름을 사용하세요. 예를 들어 `slidev-addon-awesome`
+- `package.json`의 `keywords` 필드에 `slidev-addon`과 `slidev`를 추가하세요.
 
-## Setup
+## 설정
 
-### Initialization
+### 초기화
 
-To create your addon, start by creating a directory with create a `package.json` file (you can use `npm init`).
+애드온을 만들려면 `package.json` 파일을 만들고 `npm init`을 사용하여 디렉토리를 만드세요.
 
-Then, install slidev dependencies:
+그런 다음, slidev 종속성을 설치하세요:
 
 ```bash
 $ npm install -D @slidev/cli
 ```
 
-### Testing
+### 테스트
 
-To set up the testing playground for your addon, you can create an `example.md` file with some content.
+애드온을 테스트하기 위해, `example.md` 파일을 만들고 내용을 추가하세요.
 
-And optionally, you can also add some scripts to your `packages.json`
+원한다면 `packages.json`에 몇 가지 스크립트를 추가할 수 있습니다.
 
 ```json
 // package.json
@@ -49,15 +49,15 @@ And optionally, you can also add some scripts to your `packages.json`
 }
 ```
 
-To publish your addon, simply run `npm publish` and you are good to go. There is no build process required (which means you can directly publish `.vue` and `.ts` files, Slidev is smart enough to understand them).
+애드온들 게시하려면, `npm publish`를 실행하세요. 빌드 과정이 필요하지 않습니다. (즉, `.vue` 및 `.ts` 파일을 직접 게시할 수 있습니다. Slidev는 이들을 이해할 수 있습니다.)
 
-Addon contribution points follow the same conventions as local customization, please refer to [the docs for the naming conventions](/custom/). 
+애드온 기여 지점은 로컬 커스터마이징과 동일한 규칙을 따릅니다. [문서에서 네이밍 규칙](/custom/)을 참조하세요.
 
-## Addon metadata
+## 애드온 메타데이터
 
-### Slidev Version
+### Slidev 버전
 
-If the addon is relying on a specific feature of Slidev that are newly introduced, you can set the minimal Slidev version required to have your addon working properly:
+애드온이 Slidev의 특정 기능에 의존하는 경우, 애드온이 제대로 작동하려면 필요한 최소 Slidev 버전을 설정할 수 있습니다:
 
 ```json
 // package.json
@@ -68,4 +68,4 @@ If the addon is relying on a specific feature of Slidev that are newly introduce
 }
 ```
 
-If users are using older versions of Slidev, an error will be thrown.
+만일 사용자가 Slidev의 오래된 버전을 사용하고 있다면, 오류가 발생할 것입니다.

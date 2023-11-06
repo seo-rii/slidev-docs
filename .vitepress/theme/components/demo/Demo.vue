@@ -59,7 +59,7 @@ function resume() {
   paused.value = false
 }
 
-const COVER_URL = 'https://sli.dev/demo-cover.png'
+const COVER_URL = 'https://ko.sli.dev/demo-cover.png'
 if (typeof window !== 'undefined') {
   const img1 = new Image()
   img1.src = COVER_URL
@@ -73,8 +73,8 @@ onMounted(() => {
       code.value = JSON.parse(JSON.stringify(block.value!.innerText.replace('|', '')))
     },
   })
-    .type('<br><span class="token title"># Welcome to Slidev!</span><br><br>', { delay: 400 })
-    .type('Presentation Slides for Developers', { delay: 400 })
+    .type('<br><span class="token title"># Slidev의 세계에 오신 것을 환영해요!</span><br><br>', { delay: 400 })
+    .type('개발자를 위한 프레젠테이션 툴', { delay: 400 })
     .move('START', { speed: 0 })
     .type('<br>')
     .move('START')
@@ -100,10 +100,10 @@ onMounted(() => {
     .type('<br><br><span class="token punctuation">---</span><br><br>', { delay: 400 })
     .exec(resume)
     .exec(() => setTimeout(() => page.value = 1))
-    .type('<span class="token title"># Page 2</span><br><br>', { delay: 400 })
-    .type('- 📄 Write slides in a single Markdown file<br>', { delay: 800 })
-    .type('- 🌈 Themes, code blocks, interactive components<br>', { delay: 800 })
-    .type('- 😎 Read the docs to learn more!', { delay: 800 })
+    .type('<span class="token title"># 페이지 2</span><br><br>', { delay: 400 })
+    .type('- 📄 마크다운만 써서 프레젠테이션 만들기<br>', { delay: 800 })
+    .type('- 🌈 테마, 코드 블럭, 인터랙티브 요소 포함<br>', { delay: 800 })
+    .type('- 😎 문서를 읽고 더 알아보세요!', { delay: 800 })
     .exec(() => setTimeout(() => page.value = 0))
     .go()
 })

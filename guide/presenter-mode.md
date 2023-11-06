@@ -1,14 +1,16 @@
-# Presenter Mode
+# 발표자 모드
 
-Click the <carbon-user-speaker class="inline-icon-btn"/> button in the navigation panel, or visit `http://localhost:3030/presenter` manually, to enter the presenter mode. Whenever you enter the presenter mode, other page instances will automatically stay in sync with the presenter.
+Slidev는 발표자 모드를 제공합니다. 발표자 모드는 발표자가 슬라이드를 제어할 수 있도록 도와줍니다.
+
+발표자 모드를 사용하려면, 슬라이드를 실행하고 네비게이션 패널에서 <carbon-user-speaker class="inline-icon-btn"/> 버튼을 클릭하거나, 수동으로 `http://localhost:3030/presenter`를 방문하십시오. 발표자 모드에 들어가면, 다른 페이지 인스턴스는 자동으로 발표자와 동기화됩니다.
 
 ![](/screenshots/presenter-mode.png)
 
-## Disabling
+## 비활성화
 
-Presenter mode is enabled by default.
+발표자 모드는 기본적으로 활성화되어 있습니다.
 
-You can disable this feature with the following config:
+다음 설정으로 이 기능을 비활성화할 수 있습니다.
 
 ```md
 ---
@@ -16,20 +18,20 @@ presenter: false
 ---
 ```
 
-Or you can enable it only for `dev` or `build` mode by setting the mode you want in the config:
+또는 `dev` 또는 `build` 모드에서만 활성화할 수 있습니다. 이를 위해 설정에서 원하는 모드를 설정하면 됩니다.
 ```md
 ---
 presenter: dev
 ---
 ```
-In that case the presenter will only be available when running `slidev` but not when running `slidev build`.
+이 경우, `slidev`를 실행할 때만 발표자가 활성화되고 `slidev build`를 실행할 때는 발표자가 활성화되지 않습니다.
 
-## Remote restricted access
+## 원격 접근 제한
 
-You can run your presentation with remote access by running `slidev --remote`.
+발표자 모드를 실행하려면 `slidev --remote`를 실행하면 됩니다.
 
-In that case you may want to share the slides with other people but you don't want them to access the presenter mode to mess up your presentation.
+이 경우 발표자 모드로 발표를 진행하고 다른 사람과 슬라이드를 공유하고 싶지만, 다른 사람이 발표자 모드에 접근하여 발표를 방해하는 것을 원하지 않을 수 있습니다.
 
-For this scenario you can provide a password for starting the server by running `slidev --remote=your_password`.
+이 경우 서버를 시작할 때 비밀번호를 제공할 수 있습니다. `slidev --remote=your_password`를 실행하면 됩니다.
 
-In that case you will need to provide the password when accessing `/presenter/*` routes.
+이 경우 `/presenter/*` 경로에 접근할 때 비밀번호를 제공해야 합니다.

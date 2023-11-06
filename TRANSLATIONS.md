@@ -17,70 +17,75 @@ In case it's already been translated but you're wondering how to maintain it, sk
 
 ## Getting started
 
-- [ ] Fork the main docs repo: [slidevjs/docs](https://github.com/slidevjs/docs)
-- [ ] Translate README.md, you can take one of the already translated repositories as an example.
-- [ ] Share your repo's link to the `#translations` channel telling people you are working on it and find collaborators. 
+- [x] Fork the main docs repo: [slidevjs/docs](https://github.com/slidevjs/docs)
+- [x] Translate README.md, you can take one of the already translated repositories as an example.
+- [x] Share your repo's link to the `#translations` channel telling people you are working on it and find collaborators. 
 
 ## Translating Markdown files
 
-- [ ] `showcases.md` - A gallery showcase of Slidev presentations.
-- [ ] `index.md` - Mainpage content, note that some of it is buried under Vue components listed further below.
+- [x] `showcases.md` - A gallery showcase of Slidev presentations.
+- [x] `index.md` - Mainpage content, note that some of it is buried under Vue components listed further below.
 
 ### .vitepress/
 
-- [ ] `config.js` - Sitemap
-- [ ] `/theme/components/WorkingInProgress.vue` - WIP notice shown in mainpage
-- [ ] `/theme/components/demo/Demo.vue` - Animated demo shown in mainpage
-- [ ] `/theme/components/Environment.vue` - Describes the environment of a setting.
+- [x] `config.js` - Sitemap
+- [x] `/theme/components/WorkingInProgress.vue` - WIP notice shown in mainpage
+- [x] `/theme/components/demo/Demo.vue` - Animated demo shown in mainpage
+- [x] `/theme/components/Environment.vue` - Describes the environment of a setting.
 
 ### builtin/
 
-- [ ] `components.md` - Use [Vue components](https://v3.vuejs.org/guide/component-basics.html) inside Slidev
-- [ ] `layouts.md` - Use Vue layouts inside Slidev
+- [x] `components.md` - Use [Vue components](https://v3.vuejs.org/guide/component-basics.html) inside Slidev
+- [x] `layouts.md` - Use Vue layouts inside Slidev
 
 ### custom/
 
-- [ ] `config-katex.md` - Configuring Katex
-- [ ] `config-mermaid.md` - Configuring Mermaid
-- [ ] `config-monaco.md` - Configuring Monaco
-- [ ] `config-shortcuts.md` - Configuring Shortcuts
-- [ ] `config-vite.md` - Configuring Vite
-- [ ] `config-vue.md` - Configuring Vue
-- [ ] `config-windicss.md`- Configuring Windicss
-- [ ] `directory-structure.md` - Configuring the directory structure
-- [ ] `fonts.md` - Configuring fonts
-- [ ] `global-layers.md` - Configuring the global layers
-- [ ] `highlighters.md` - Configuring code highlighters
-- [ ] `index.md`- Customizations index page
-- [ ] `vue-context.md` - The Vue global context
+- [x] `config-katex.md` - Configuring Katex
+- [x] `config-mermaid.md` - Configuring Mermaid
+- [x] `config-monaco.md` - Configuring Monaco
+- [x] `config-parser.md` - Configuring Parser
+- [x] `config-shortcuts.md` - Configuring Shortcuts
+- [x] `config-unocss.md`- Configuring Unocss
+- [x] `config-vite.md` - Configuring Vite
+- [x] `config-vue.md` - Configuring Vue
+- [x] `config-windicss.md`- Configuring Windicss
+- [x] `directory-structure.md` - Configuring the directory structure
+- [x] `fonts.md` - Configuring fonts
+- [x] `global-layers.md` - Configuring the global layers
+- [x] `highlighters.md` - Configuring code highlighters
+- [x] `index.md`- Customizations index page
+- [x] `vue-context.md` - The Vue global context
 
 ### guide/
 
-- [ ] `animations.md` - Animations and transitions
-- [ ] `editors.md` - Editor integrations
-- [ ] `exporting.md`- Exporting your slides
-- [ ] `faq.md` - Frequent Answered Questions
-- [ ] `index.md` - Getting started with Slidev
-- [ ] `navigation.md` - Navigation across slides
-- [ ] `presenter-mode.md`- Toggling presenter mode
-- [ ] `recording.md`- Recording your presentation
-- [ ] `syntax.md` - Markdown syntax
-- [ ] `why.md` - _Why Slidev?_
+- [x] `animations.md` - Animations and transitions
+- [x] `drawing.md` - Drawing & Annotations
+- [x] `editors.md` - Editor integrations
+- [x] `exporting.md`- Exporting your slides
+- [x] `hosting.md`- Hosting static sites
+- [x] `faq.md` - Frequent Answered Questions
+- [x] `index.md` - Getting started with Slidev
+- [x] `install.md` - Installing Slidev
+- [x] `navigation.md` - Navigation across slides
+- [x] `presenter-mode.md`- Toggling presenter mode
+- [x] `recording.md`- Recording your presentation
+- [x] `syntax.md` - Markdown syntax
+- [x] `why.md` - _Why Slidev?_
 
 ### resources/
 
-- [ ] `covers.md` - Curated covers for Slidev
+- [x] `covers.md` - Curated covers for Slidev
 
 ### themes/
 
-- [ ] `gallery.md` - Theme gallery
-- [ ] `use.md` - How to use Slidev themes
-- [ ] `write-a-theme.md` - Write your own theme
+- [x] `gallery.md` - Theme gallery
+- [x] `use.md` - How to use Slidev themes
+- [x] `write-a-theme.md` - Write your own theme
 
 ### addons/
 
-- [ ] `use.md` - How to use Slidev addons
-- [ ] `write-an-addon.md` - Write your own addon
+- [x] `use.md` - How to use Slidev addons
+- [x] `write-an-addon.md` - Write your own addon
 
 ## Publishing your translations
 

@@ -1,34 +1,34 @@
-# Write a Theme
+# 테마 만들기
 
-To get started, we recommend you use our generator for scaffolding your first theme
+시작하기 전에, 테마를 만들기 위한 스캐폴딩을 위해 다음의 제너레이터를 사용하는 것을 추천합니다.
 
 ```bash
 $ npm init slidev-theme
 ```
 
-Then you can modify and play with it. You can also refer to the [official themes](/themes/gallery) as examples.
+그러면, 테마를 만들기 위한 기본적인 구조가 생성됩니다. 그리고 나서, `example.md` 파일을 열어서 테마를 수정하고 테스트할 수 있습니다. 또한, [공식 테마](/themes/gallery)를 참고할 수도 있습니다.
 
-## Capability
+## 기능
 
-A theme can contribute to the following points:
+테마는 다음의 기능을 제공할 수 있습니다:
 
-- Global styles
-- Provide default configurations (fonts, color schema, highlighters, etc.)
-- Provide custom layouts or override the existing one
-- Provide custom components or override the existing one
-- Extend UnoCSS/Windi CSS configurations
-- Configure tools like Monaco and Prism
+- 전역 스타일
+- 기본 설정 제공 (폰트, 색상 스키마, 하이라이터 등)
+- 기본 레이아웃 제공 또는 기존 레이아웃 오버라이드
+- 기본 컴포넌트 제공 또는 기존 컴포넌트 오버라이드
+- UnoCSS/Windi CSS 설정 확장
+- Monaco와 Prism 같은 도구 설정
 
-## Conventions
+## 배포 규칙
 
-Themes are published to npm registry, and they should follow the conventions below:
+테마는 npm 레지스트리에 배포되며, 다음의 규칙을 따라야 합니다:
 
-- Package name should start with `slidev-theme-`, for example: `slidev-theme-awesome`
-- Add `slidev-theme` and `slidev` in the `keywords` field of your `package.json`
+- 패키지 이름은 `slidev-theme-`로 시작해야 합니다. 예를 들어, `slidev-theme-awesome`
+- `package.json`의 `keywords` 필드에 `slidev-theme`와 `slidev`를 추가해야 합니다.
 
-## Setup
+## 시작하기
 
-To set up the testing playground for your theme, you can create `example.md` with the following frontmatter, to tell Slidev you are using the current directory as a theme.
+테마를 만들기 위해, 환경을 먼저 설정합시다. `example.md` 파일을 만들고, 아래와 같이 프론트매터를 추가합니다. 이렇게 하면, 현재 디렉토리를 테마로 사용한다는 것을 Slidev에게 알릴 수 있습니다.
 
 ```md
 ---
@@ -36,7 +36,7 @@ theme: ./
 ---
 ```
 
-Optionally, you can also add some scripts to your `packages.json`
+원한다면 `package.json`에 스크립트를 추가할 수도 있습니다.
 
 ```json
 // package.json
@@ -50,15 +50,15 @@ Optionally, you can also add some scripts to your `packages.json`
 }
 ```
 
-To publish your theme, simply run `npm publish` and you are good to go. There is no build process required (which means you can directly publish `.vue` and `.ts` files, Slidev is smart enough to understand them).
+테마를 배포하기 위해 `npm publish`를 실행하면 됩니다. 빌드 과정이 필요하지 않습니다. (즉, `.vue`와 `.ts` 파일을 직접 배포할 수 있습니다. Slidev는 이들을 이해할 수 있습니다.)
 
-Theme contribution points follow the same conventions as local customization, please refer to [the docs for the naming conventions](/custom/). 
+테마 기여는 로컬 커스터마이징과 동일한 규칙을 따릅니다. 자세한 내용은 [커스터마이징 문서](/custom/)를 참고하세요.
 
-## Default Configurations
+## 기본 설정
 
-> Available since v0.19
+> v0.19부터 사용 가능
 
-A theme can provide default [configurations](/custom/#frontmatter-configures) via `package.json`.
+테마는 `package.json`을 통해 기본 설정을 제공할 수 있습니다.
 
 ```json
 // package.json
@@ -76,15 +76,15 @@ A theme can provide default [configurations](/custom/#frontmatter-configures) vi
 }
 ```
 
-Fonts will be auto imported from [Google Fonts](https://fonts.google.com/).
+위의 예시는 기본적인 설정을 보여줍니다. `aspectRatio`와 `canvasWidth`는 [프론트매터 설정](/guide/syntax.html#frontmatter)과 동일합니다. `fonts`는 [Google Fonts](https://fonts.google.com/)에서 자동으로 가져옵니다.
 
-Learn more about [fonts](/custom/fonts) and [frontmatter configurations](/custom/#frontmatter-configures).
+[폰트](/custom/fonts)와 [프론트매터 설정](/custom/#프론트매터-설정)에 대해 더 알아보세요.
 
-## Theme Metadata
+## 테마 메타데이터
 
-### Color Schema
+### 색상 스키마
 
-By default, Slidev assumes themes support both light mode and dark mode. If you only want your theme be presented in a designed color schema, you will need to specify it explicitly in `package.json`
+기본적으로, Slidev는 테마가 라이트 모드와 다크 모드를 모두 지원한다고 가정합니다. 만약 테마가 특정 색상 스키마만 지원한다면, `package.json`에서 명시적으로 지정해야 합니다.
 
 ```json
 // package.json
@@ -100,7 +100,7 @@ By default, Slidev assumes themes support both light mode and dark mode. If you 
 }
 ```
 
-To access the dark mode when creating your theme styles, you can wrap the dark-mode-specific css inside a `dark` class:
+테마를 만들때 다크 모드의 판별을 위해 `html.dark` 선택자를 사용할 수 있습니다.
 
 ```css
 /* general css here */
@@ -114,15 +114,15 @@ html.dark {
 }
 ```
 
-Slidev toggles a `dark` class on the page's `html` element for switching color schema.
+Slidev는 색상 스키마를 전환하기 위해 페이지의 `html` 요소에 `dark` 클래스를 토글합니다.
 
-### Highlighter
+### 코드 하이라이팅
 
-Syntax highlighting colors are also provided in the theme. We support both [Prism](https://prismjs.com/) and [Shiki](https://github.com/shikijs/shiki). For more information please refer to [the syntax highlighting docs](/custom/highlighters).
+신택스 하이라이터 색상도 테마에서 제공할 수 있습니다. [Prism](https://prismjs.com/)과 [Shiki](https://github.com/shikijs/shiki) 모두 지원합니다. 자세한 내용은 [하이라이터 문서](/custom/highlighters)를 참고하세요.
 
-You can support either one of them, or both. Refer to the default theme for configurations examples [`./styles/code.css`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/styles/code.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/setup/shiki.ts).
+둘 중 하나 또는 둘 다 지원할 수 있습니다. 기본 테마의 설정 예시를 참고하세요. [`./styles/code.css`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/styles/code.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/setup/shiki.ts).
 
-Also, remember to specify the supported highlighters in your `package.json`
+`package.json`에서 지원하는 하이라이터를 명시하는 것을 잊지 마세요.
 
 ```json
 // package.json
@@ -133,9 +133,9 @@ Also, remember to specify the supported highlighters in your `package.json`
 }
 ```
 
-### Slidev Version
+### Slidev 버전
 
-If the theme is relying on a specific feature of Slidev that are newly introduced, you can set the minimal Slidev version required to have your theme working properly:
+만일 테마에서 slidev 최신 버전의 기능을 사용한다면, 테마가 제대로 작동하기 위해 필요한 최소한의 Slidev 버전을 설정할 수 있습니다.
 
 ```json
 // package.json
@@ -146,4 +146,4 @@ If the theme is relying on a specific feature of Slidev that are newly introduce
 }
 ```
 
-If users are using older versions of Slidev, an error will be thrown.
+만약 사용자가 Slidev의 오래된 버전을 사용하고 있다면, 에러가 발생합니다.

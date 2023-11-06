@@ -2,51 +2,51 @@
 
 const Guide = [
   {
-    text: 'Why Slidev',
+    text: 'Slidev를 사용하는 이유',
     link: '/guide/why',
   },
   {
-    text: 'Getting Started',
+    text: '시작하기',
     link: '/guide/',
   },
   {
-    text: 'Installation',
+    text: '설치',
     link: '/guide/install',
   },
   {
-    text: 'Markdown Syntax',
+    text: '마크다운 문법',
     link: '/guide/syntax',
   },
   {
-    text: 'Navigation',
+    text: '네비게이션',
     link: '/guide/navigation',
   },
   {
-    text: 'Animations',
+    text: '애니메이션',
     link: '/guide/animations',
   },
   {
-    text: 'Exporting',
+    text: '저장하기',
     link: '/guide/exporting',
   },
   {
-    text: 'Static Hosting',
+    text: '파일 호스팅',
     link: '/guide/hosting',
   },
   {
-    text: 'Record Presentation',
+    text: '녹화하기',
     link: '/guide/recording',
   },
   {
-    text: 'Presenter Mode',
+    text: '발표자 모드',
     link: '/guide/presenter-mode',
   },
   {
-    text: 'Drawing & Annotations',
+    text: '주석',
     link: '/guide/drawing',
   },
   {
-    text: 'Editor Integrations',
+    text: '에디터 통합',
     link: '/guide/editors',
   },
   {
@@ -57,33 +57,37 @@ const Guide = [
 
 const Theme = [
   {
-    text: 'Use Theme',
+    text: '테마 변경하기',
     link: '/themes/use',
   },
   {
-    text: 'Theme Gallery',
+    text: '테마 갤러리',
     link: '/themes/gallery',
   },
   {
-    text: 'Write a Theme',
+    text: '테마 만들기',
     link: '/themes/write-a-theme',
   },
 ]
 
 const Addon = [
   {
-    text: 'Use Addon',
+    text: '애드온 사용하기',
     link: '/addons/use',
   },
   {
-    text: 'Write an Addon',
+    text: '애드온 만들기',
     link: '/addons/write-an-addon',
   },
 ]
 
 const Translations = [
   {
+    text: '한국어',
+  },
+  {
     text: 'English',
+    link: 'https://sli.dev{{pathname}}',
   },
   {
     text: '简体中文',
@@ -125,112 +129,112 @@ const Translations = [
 
 const Customizations = [
   {
-    text: 'Customizations',
+    text: '커스터마이징',
     link: '/custom/',
   },
   {
-    text: 'Directory Structure',
+    text: '폴더 구조',
     link: '/custom/directory-structure',
   },
   {
-    text: 'Fonts',
+    text: '폰트',
     link: '/custom/fonts',
   },
   {
-    text: 'Highlighters',
+    text: '하이라이팅',
     link: '/custom/highlighters',
   },
   {
-    text: 'Configure Vue',
+    text: 'Vue 설정',
     link: '/custom/config-vue',
   },
   {
-    text: 'Configure Vite',
+    text: 'Vite 설정',
     link: '/custom/config-vite',
   },
   {
-    text: 'Configure UnoCSS',
+    text: 'UnoCSS 설정',
     link: '/custom/config-unocss',
   },
   {
-    text: 'Configure Windi CSS',
+    text: 'Windi CSS 설정',
     link: '/custom/config-windicss',
   },
   {
-    text: 'Configure Monaco',
+    text: 'Monaco 설정',
     link: '/custom/config-monaco',
   },
   {
-    text: 'Configure KaTeX',
+    text: 'KaTeX 설정',
     link: '/custom/config-katex',
   },
   {
-    text: 'Configure Mermaid',
+    text: 'Mermaid 설정',
     link: '/custom/config-mermaid',
   },
   {
-    text: 'Configure Parser',
+    text: '파서 설정',
     link: '/custom/config-parser',
   },
   {
-    text: 'Configure Shortcuts',
+    text: '단축키 설정',
     link: '/custom/config-shortcuts',
   },
   {
-    text: 'Vue Global Context',
+    text: 'Vue 전역 컨텍스트',
     link: '/custom/vue-context',
   },
   {
-    text: 'Global Layers',
+    text: '전역 레이어',
     link: '/custom/global-layers',
   }
 ]
 
 const BuiltIn = [
   {
-    text: 'Components',
+    text: '컴포넌트',
     link: '/builtin/components',
   },
   {
-    text: 'Layouts',
+    text: '레이아웃',
     link: '/builtin/layouts',
   },
 ]
 
 const Resources = [
   {
-    text: 'Showcases',
+    text: '쇼케이스',
     link: '/showcases',
   },
   {
-    text: 'Learning Resources',
+    text: '참고 자료',
     link: '/resources/learning',
   },
   {
-    text: 'Curated Covers',
+    text: '큐레이션 커버',
     link: '/resources/covers',
   },
 ]
 
 const slidebars = [
   {
-    text: 'Guide',
+    text: '가이드',
     children: Guide,
   },
   {
-    text: 'Themes',
+    text: '테마',
     children: Theme,
   },
   {
-    text: 'Addons',
+    text: '애드온',
     children: Addon,
   },
   {
-    text: 'Customizations',
+    text: '커스터마이징',
     children: Customizations,
   },
   {
-    text: 'Built-in',
+    text: '빌트인',
     children: BuiltIn,
   },
 ]
@@ -240,16 +244,16 @@ const slidebars = [
  */
 module.exports = {
   title: 'Slidev',
-  description: 'Presentation slides for developers',
+  description: '개발자들을 위한 프레젠테이션 툴',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', { property: 'og:title', content: 'Slidev' }],
-    ['meta', { property: 'og:image', content: 'https://sli.dev/og-image.png' }],
+    ['meta', { property: 'og:image', content: 'https://ko.sli.dev/og-image.png' }],
     ['meta', { property: 'og:description', content: 'Presentation slides for developers' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:creator', content: '@slidevjs' }],
-    ['meta', { name: 'twitter:image', content: 'https://sli.dev/og-image.png' }],
+    ['meta', { name: 'twitter:image', content: 'https://ko.sli.dev/og-image.png' }],
     ['link', { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' }],
     ['link', { rel: 'preconnect', crossorigin: 'anonymous', href: 'https://fonts.gstatic.com' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500&family=Inter:wght@200;400;500;600', rel: 'stylesheet' }],
@@ -259,7 +263,7 @@ module.exports = {
     logo: '/logo.svg',
     docsBranch: 'main',
     editLinks: true,
-    editLinkText: 'Suggest changes to this page',
+    editLinkText: '페이지 변경 제안하기',
 
     algolia: {
       appId: 'LCBV6MIFS6',
@@ -267,37 +271,37 @@ module.exports = {
       indexName: 'slidev',
       searchParameters: {
         // for translations maintainers: change the filter to your locale code (subdomain name)
-        facetFilters: ['language:en']
+        facetFilters: ['language:ko']
       }
     },
 
     nav: [
       {
-        text: 'Guide',
+        text: '가이드',
         items: Guide,
       },
       {
-        text: 'Theme',
+        text: '테마',
         items: Theme,
       },
       {
-        text: 'Addon',
+        text: '애드온',
         items: Addon,
       },
       {
-        text: 'Customize',
+        text: '커스터마이징',
         items: Customizations,
       },
       {
-        text: 'Built-in',
+        text: '빌트인',
         items: BuiltIn,
       },
       {
-        text: 'Resources',
+        text: '리소스',
         items: Resources,
       },
       {
-        text: 'English',
+        text: '한국어',
         items: Translations,
       },
     ],

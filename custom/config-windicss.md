@@ -1,21 +1,21 @@
-# Configure Windi CSS
+# Windi CSS 설정하기
 
 <Environment type="node" />
 
-::: warning
-Since Slidev v0.42.0, [UnoCSS](/custom/config-unocss) become the default CSS framework for Slidev.
+> 경고
+> 
+> Slidev v0.42.0 이후로, [UnoCSS](/custom/config-unocss)가 Slidev의 기본 CSS 프레임워크가 되었습니다.
+> 
+> `css: windicss`를 프론트매터에 설정하여 Windi CSS를 계속 사용할 수 있습니다.
+> ```md
+> ---
+> css: windicss
+> ---
+> ```
 
-You can still use Windi CSS by setting `css: windicss` in the frontmatter.
-```md
----
-css: windicss
----
-```
-:::
+HTML 마크업은 마크다운에 내장되어 있습니다. 따라서 원하는대로 내용을 스타일링할 수 있습니다.
 
-Markdown naturally supports embedded HTML markups. You can therefore style your content the way you want.
-
-For example:
+예를 들어:
 
 ```html
 <div class="grid pt-4 gap-4 grid-cols-[100px,1fr]">
@@ -28,11 +28,11 @@ For example:
 </div>
 ```
 
-The [Attributify Mode](https://windicss.org/posts/v30.html#attributify-mode) in [Windi CSS v3.0](https://windicss.org/posts/v30.html) is enabled by default.
+[Windi CSS v3.0](https://windicss.org/posts/v30.html)의 [Attributify Mode](https://windicss.org/posts/v30.html#attributify-mode)는 기본적으로 활성화되어 있습니다.
 
-## Configurations
+## 설정
 
-To configure Windi CSS, create `setup/windicss.ts` with the following content to extend the builtin configurations
+Windi CSS를 구성하려면 다음 내용과 같이 `setup/windicss.ts`를 만들어 내장된 구성을 확장합니다.
 
 ```ts
 // setup/windicss.ts
@@ -57,4 +57,4 @@ export default defineWindiSetup(() => ({
 }))
 ```
 
-Learn more about [Windi CSS configurations](https://windicss.org/guide/configuration.html)
+[더 많은 Windi CSS 구성](https://windicss.org/guide/configuration.html)에 대해서는 Windi CSS 문서를 참조하세요.

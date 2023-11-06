@@ -1,14 +1,14 @@
-# Configure Shortcuts
+# 단축키 설정하기
 
-> Available since v0.20
+> v0.20부터 사용 가능
 
-> Since v0.35.6 (excluded), you decide which base shortcuts to keep (see `...base,` below).
+> v0.35.6 (제외)부터는 어떤 기본 단축키를 유지할지 결정할 수 있습니다 (아래의 `...base,` 참조).
 
 <Environment type="client" />
 
-## Getting started
+## 시작하기
 
-Create `./setup/shortcuts.ts` with the following content:
+`./setup/shortcuts.ts`를 만들고 다음 내용을 추가합니다.
 
 ```ts
 import type { NavOperations, ShortcutOptions } from '@slidev/types'
@@ -31,13 +31,13 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
 })
 ```
 
-With the setup, you can provide the custom setting for shortcuts mentioned in [Navigation](/guide/navigation#navigation-bar). The above configuration binds next animation or slide to <kbd>enter</kbd> and previous animation or slide to <kbd>backspace</kbd>.
+위 설정으로 [Navigation](/guide/navigation#navigation-bar)에 언급된 단축키에 대한 사용자 정의 설정을 제공할 수 있습니다. 위 설정은 <kbd>enter</kbd>를 다음 애니메이션 또는 슬라이드로, <kbd>backspace</kbd>를 이전 애니메이션 또는 슬라이드로 바인딩합니다.
 
-The configuration function receives an object with some navigation methods, and returns an array containing some shortcut configuration. Refer to the type definitions for more details.
+설정 함수는 일부 네비게이션 메서드를 포함하는 객체를 받고, 일부 단축키 설정을 포함하는 배열을 반환합니다. 자세한 내용은 타입 정의를 참조하세요.
 
-## Advanced key binding
+## 고급 키 바인딩
 
-The `key` type only allows for strings, but you can still bind multiple keys by using following convention:
+`key` 타입은 문자열만 허용하지만 다음 규칙을 사용하여 여러 키를 바인딩할 수 있습니다.
 
 ```ts
 import type { NavOperations, ShortcutOptions } from '@slidev/types'
@@ -55,9 +55,9 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
 })
 ```
 
-## Advanced navigation features
+## 고급 네비게이션 기능
 
-The `nav` navigation operations allows you to access some functionalities than basic _next slide_ or _previous slide_. See the following for use-cases:
+`nav` 네비게이션 작업을 사용하면 기본 _다음 슬라이드_ 또는 _이전 슬라이드_보다 더 많은 기능에 액세스할 수 있습니다. 다음을 참조하세요.
 
 ```ts
 import { defineShortcutsSetup, NavOperations } from '@slidev/types'
@@ -77,4 +77,4 @@ export default defineShortcutsSetup((nav: NavOperations) => {
 })
 ```
 
-Refer to [useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/) for more details about key pressed event.
+[useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/)에서 키 누름 이벤트에 대한 자세한 내용을 참조하세요.

@@ -1,12 +1,12 @@
-# Global Layers
+# 전역 레이어
 
-> Available since v0.17
+> v0.17부터 사용 가능
 
-Global layers allow you to have custom components that **persistent** across slides. This could be useful for having footers, cross-slides animations, global effects, etc.
+전역 레이어는 슬라이드 간에 **지속적인** 사용자 정의 컴포넌트를 가질 수 있습니다. 이는 푸터, 슬라이드 간 애니메이션, 전역 효과 등을 위해 유용할 수 있습니다.
 
-Slidev provides three layers for this usage, create `global-top.vue`, `global-bottom.vue` or `custom-nav-controls.vue` under your project root and it will pick up automatically.
+Slidev는 이러한 용도로 `global-top.vue`, `global-bottom.vue` 또는 `custom-nav-controls.vue`를 프로젝트 루트 아래에 만들면 자동으로 선택합니다.
 
-Layers relationship:
+레이어 관계:
 
 - Global Top (`global-top.vue`)
 - Slides
@@ -14,7 +14,7 @@ Layers relationship:
 - NavControls
   - Customized Navigation Controls (`custom-nav-controls.vue`)
 
-## Example
+## 예시
 
 ```html
 <!-- global-bottom.vue -->
@@ -23,7 +23,7 @@ Layers relationship:
 </template>
 ```
 
-The text `Your Name` will appear to all your slides.
+'Your Name' 텍스트가 모든 슬라이드에 나타납니다.
 
 ```html
 <!-- custom-nav-controls -->
@@ -34,9 +34,9 @@ The text `Your Name` will appear to all your slides.
 </template>
 ```
 
-The button `Next` will appear in NavControls.
+'Next' 버튼이 모든 슬라이드에 나타납니다.
 
-To enable it conditionally, you can apply it with the [Vue Global Context](/custom/vue-context).
+이것을 조건부로 사용하려면 [Vue Global Context](/custom/vue-context)를 적용할 수 있습니다.
 
 ```html
 <!-- hide the footer from Page 4 -->
